@@ -91,6 +91,7 @@ Keyword clusters are based on live search-result language, current market report
 | Public Relations Assistant in a 2016 planning record | Confirmed | City planning appendix |
 | Hawaiʻi Kai Neighborhood Board member in 2025–26 | Confirmed | City and County of Honolulu meeting records |
 | Public testimony on local policy matters | Confirmed | Honolulu City Council testimony record |
+| Favored preserving nighttime access while weighing safety controls at Kamiloʻiki Park | Confirmed | Hawaiʻi News Now, June 2025; direct attributed remarks |
 
 ### Present public-position diagnosis
 
@@ -178,11 +179,21 @@ Do not use fabricated engagement as a performance claim. In a live client progra
 11. Hawaiʻi Business, Hawaiʻi Economic Outlook 2026: https://www.hawaiibusiness.com/hawaiis-economic-outlook-2026/
 12. City Council testimony, Resolution 23-204: https://hnldoc.ehawaii.gov/hnldoc/document-download?id=19171
 13. Sam Wolff public profile: https://www.facebook.com/sbwolff/
+14. Hawaiʻi News Now, “Drugs, noise prompt calls for nighttime closure of East Oʻahu park,” 6 June 2025: https://www.hawaiinewsnow.com/2025/06/07/drugs-noise-prompt-calls-nighttime-closure-east-oahu-park/
+15. City and County of Honolulu, Samuel Wolff member page: https://www.honolulu.gov/nco/member_bio/samuel-wolff/
+16. Hawaiʻi Kai Neighborhood Board letter on sewer-fee equity, 30 April 2025: https://hnldoc.ehawaii.gov/hnldoc/document-download?id=24754
+
+## Image provenance
+
+| Subject | Local asset | Public source | Resolution | Rights status |
+|---|---|---|---:|---|
+| Mark H. Young | `public/mark-young.jpg` | True Real Estate Hawaiʻi first-party agent page media library: https://truerealestatehawaii.com/wp-content/uploads/Mark-square.jpg | 1000×1000 | Publicly accessible first-party professional headshot; permission for republication not independently documented |
+| Samuel “Sam” Wolff and family | `public/sam-wolff.jpg` | Subject-controlled public Facebook profile: https://www.facebook.com/sbwolff/ | 720×720 | Publicly accessible profile photograph; permission for republication and family-member consent not independently documented |
 
 ## Open verification items
 
 - Obtain first-party confirmation of Sam’s current employer and exact dates for post-2016 roles.
 - Obtain the full 2026 Honolulu Real Producers Mark feature before using accident details.
 - Reconcile Mark’s exact brokerage-founding date against corporate records and the full Pacific Business News article.
-- Secure subject-approved headshots or clearly licensed editorial images. Search results did not return a reliable, correctly identified reusable Sam image.
+- Secure written republication approval for Mark’s first-party headshot and Sam’s subject-controlled family photograph before a broad public campaign.
 - Replace concept engagement numbers with either no numbers or an unmistakably modeled presentation before public distribution.
