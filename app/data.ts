@@ -101,7 +101,11 @@ export const profiles: Record<"mark" | "sam", Profile> = {
       { label: "True Real Estate Hawaiʻi biography", url: "https://truerealestatehawaii.com/agent/mark-young/" },
       { label: "Honolulu Board of REALTORS®", url: "https://www.hicentral.com/directory/member/40803/Mark-H-Young/" },
       { label: "Pacific Business News profile", url: "https://www.bizjournals.com/pacific/news/2021/10/15/true-real-estate-carves-out-market-share.html" },
-      { label: "HONOLULU Magazine directory", url: "https://www.honolulumagazine.com/listings/2022-hawaii-real-estate-pro-finder/mark-h-young-3/" }
+      { label: "HONOLULU Magazine 2022 directory", url: "https://www.honolulumagazine.com/listings/2022-hawaii-real-estate-pro-finder/mark-h-young-3/" },
+      { label: "HONOLULU Magazine 2018 directory", url: "https://www.honolulumagazine.com/listings/2018-hawaii-real-estate-pro-finder/mark-young/" },
+      { label: "True Real Estate Hawaiʻi agent directory", url: "https://truerealestatehawaii.com/agents/" },
+      { label: "Homes.com — dated activity snapshot", url: "https://www.homes.com/real-estate-agents/mark-young/wv0wsdk/" },
+      { label: "Real Producers — 2020 recognition archive", url: "https://www.facebook.com/RealProducersMagazine/photos/congratulations-to-honolulu-real-producers-top-producer-mark-youngmark-young-kno/1046713439083834/" }
     ]
   },
   sam: {
@@ -110,7 +114,7 @@ export const profiles: Record<"mark" | "sam", Profile> = {
     initials: "SW",
     image: "/sam-wolff.jpg",
     verified: false,
-    headline: "Real Estate Investment Advisor | Energy, land, and the systems that shape how Hawaiʻi grows",
+    headline: "Publicly indexed Real Estate Investment Advisor | Energy, land, and the systems that shape how Hawaiʻi grows",
     location: "Honolulu County, Hawaiʻi, United States",
     company: "Real Estate Investment Advisory",
     school: "University of Hawaiʻi at Mānoa",
