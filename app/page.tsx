@@ -92,8 +92,8 @@ function ProfileHero({ p }: { p: Profile }) {
               ? {
                   overflow: "hidden",
                   backgroundImage: `url(${p.image})`,
-                  backgroundSize: "320%",
-                  backgroundPosition: "47% 34%",
+                  backgroundSize: "500%",
+                  backgroundPosition: "46.5% 34.4%",
                   backgroundRepeat: "no-repeat",
                 }
               : { overflow: "hidden" }
