@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { track } from "@vercel/analytics";
 import { useEffect, useMemo, useState } from "react";
 import { profiles, type Profile } from "./data";
@@ -141,6 +142,15 @@ function ProfileHero({ p, lens }: { p: Profile; lens: Lens }) {
           <a className="outline actionLink" href="#research">
             Review sources
           </a>
+          <Link
+            className="outline actionLink"
+            href={`/profiles/${p.slug}`}
+            onClick={() =>
+              track("standalone_profile_opened", { profile: p.slug })
+            }
+          >
+            Open full dossier
+          </Link>
         </div>
       </div>
     </section>
