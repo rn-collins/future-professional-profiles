@@ -1,15 +1,71 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
+const siteUrl = "https://future-professional-profiles.vercel.app";
+
 export const metadata: Metadata = {
-  title: "Professional Profiles — RN Studio",
-  description: "A future-facing professional presence concept by RN Studio."
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "Future Professional Profiles — RN Studio",
+    template: "%s — RN Studio",
+  },
+  description:
+    "Evidence-led professional presence concepts for Mark H. Young and Samuel Wolff, created by RN Studio.",
+  applicationName: "Future Professional Profiles",
+  keywords: [
+    "professional presence strategy",
+    "content strategy Hawaiʻi",
+    "personal brand strategy",
+    "Mark H. Young",
+    "Samuel Wolff",
+    "RN Studio",
+  ],
+  authors: [{ name: "RN Studio" }],
+  creator: "RN Studio",
+  publisher: "RN Studio",
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    url: siteUrl,
+    title: "Future Professional Profiles — RN Studio",
+    description:
+      "Two evidence-led demonstrations of what strategic professional presence can become.",
+    siteName: "RN Studio",
+  },
+  twitter: {
+    card: "summary",
+    title: "Future Professional Profiles — RN Studio",
+    description:
+      "Evidence-led professional presence and content strategy concepts.",
+  },
+  category: "business",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    name: "Future Professional Profiles",
+    url: siteUrl,
+    creator: { "@type": "Organization", name: "RN Studio" },
+    description:
+      "An evidence-led editorial and professional-presence strategy demonstration.",
+    about: ["content strategy", "professional presence", "brand strategy"],
+  };
+
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        {children}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
+        <Analytics />
+        <SpeedInsights />
+      </body>
     </html>
   );
 }

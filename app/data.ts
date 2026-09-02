@@ -13,8 +13,32 @@ export type Profile = {
   skills: string[];
   experience: { role: string; org: string; dates: string; detail: string; mark: string }[];
   education: { school: string; degree: string; dates: string }[];
-  featured: { kicker: string; title: string; description: string; tone: string }[];
-  posts: { date: string; text: string; reactions: number; comments: number; reposts: number; art: string }[];
+  editorialPosition: { thesis: string; distinction: string; promise: string };
+  strategyLayers: {
+    id: string;
+    label: string;
+    audience: string;
+    tension: string;
+    editorialMove: string;
+    outcome: string;
+  }[];
+  contentEngine: {
+    northStar: string;
+    cadence: string;
+    series: { name: string; purpose: string; formats: string[]; conversion: string }[];
+  };
+  featured: { kicker: string; title: string; description: string; tone: string; status?: "Proposed series"; evidence?: string[] }[];
+  posts: {
+    date: string;
+    text: string;
+    reactions: number;
+    comments: number;
+    reposts: number;
+    art: string;
+    status: "Proposed post";
+    strategy: string;
+    evidence: { label: string; url: string }[];
+  }[];
   sources: { label: string; url: string }[];
 };
 
@@ -29,7 +53,27 @@ export const profiles: Record<"mark" | "sam", Profile> = {
     location: "Honolulu, Hawaiʻi, United States",
     company: "True Real Estate Hawaiʻi",
     school: "University of Hawaiʻi at Mānoa",
-    connections: "500+ connections",
+    connections: "Evidence-linked public profile",
+    editorialPosition: {
+      thesis: "The advisor who sees beneath the listing.",
+      distinction: "Mark’s defensible authority is not access to inventory. It is the combination of Kāneʻohe-rooted place knowledge, finance training, appraisal discipline, brokerage leadership, and a long client-recognition record.",
+      promise: "Make the reasoning behind consequential property decisions visible before a prospect ever needs an agent."
+    },
+    strategyLayers: [
+      { id: "families", label: "Move-up families", audience: "Oʻahu households coordinating a sale and purchase", tension: "Timing, carrying cost, contingencies, and community fit make one move feel like five interlocking decisions.", editorialMove: "Show the sequencing: the decision tree, leverage points, preventable risks, and the human priority beneath each term.", outcome: "Qualified seller and buyer conversations built on judgment rather than listing spectacle." },
+      { id: "owners", label: "Prospective sellers", audience: "Owners deciding whether to sell, renovate, wait, or rent", tension: "Generic valuations hide preparation cost, condition, basis, and the consequences of getting the sequence wrong.", editorialMove: "Publish appraisal-informed seller memos that explain which facts change value—and which improvements merely photograph well.", outcome: "Valuation consultations and listings from owners already aligned with Mark’s analytical approach." },
+      { id: "investors", label: "Property investors", audience: "Local and returning investors evaluating risk-adjusted opportunity", tension: "The view and projected upside can eclipse insurance, capex, permitting, condition, and a defensible entry basis.", editorialMove: "Turn anonymized deal anatomy into repeatable diligence education: what the listing omits, what the downside reveals, and what would change the answer.", outcome: "Investment conversations in which rigor is the product—not a decorative layer added after selection." },
+      { id: "referrals", label: "Referral partners", audience: "Attorneys, lenders, wealth advisors, and former clients", tension: "A broad ‘top realtor’ identity does not tell a referrer which complicated situations Mark is best equipped to handle.", editorialMove: "Give the network concise referral triggers supported by case-pattern proof and a recognizable decision philosophy.", outcome: "More precise introductions and fewer low-fit inquiries." }
+    ],
+    contentEngine: {
+      northStar: "Every piece should reveal a consequential fact the listing alone cannot explain.",
+      cadence: "One weekly decision note, one twice-monthly visual case study, one monthly Oʻahu interpretation, and one quarterly long-form transaction anatomy.",
+      series: [
+        { name: "What the Listing Doesn’t Tell You", purpose: "Expose hidden diligence questions without sensationalizing risk.", formats: ["annotated carousel", "60-second field video", "search-led article"], conversion: "Property-specific diligence conversation" },
+        { name: "Decision Before Transaction", purpose: "Help households sequence the choices surrounding a move before focusing on inventory.", formats: ["decision tree", "client scenario", "newsletter note"], conversion: "Buyer or seller strategy session" },
+        { name: "Oʻahu, Without the Theater", purpose: "Interpret market information by segment, place, and decision—not headline alone.", formats: ["monthly briefing", "chart-led post", "referral memo"], conversion: "Newsletter subscription and referral-partner reply" }
+      ]
+    },
     about: [
       "A property can be beautiful and still be the wrong decision. My job is to know the difference—and to make the reasoning clear before a client puts anything important at risk.",
       "I was born and raised in Kāneʻohe, graduated from Hawaiʻi Baptist Academy and the University of Hawaiʻi, and began my career applying a finance education to commercial and residential appraisal. Valuation taught me to look beneath presentation: understand the land, test the assumptions, study the downside, and listen closely enough to learn what a client is really trying to protect.",
@@ -44,13 +88,13 @@ export const profiles: Record<"mark" | "sam", Profile> = {
     ],
     education: [{ school: "University of Hawaiʻi at Mānoa", degree: "Finance", dates: "Honolulu, Hawaiʻi" }, { school: "Hawaiʻi Baptist Academy", degree: "Graduate", dates: "Honolulu, Hawaiʻi" }],
     featured: [
-      { kicker: "CASE STUDY", title: "The judgment behind a waterfront acquisition", description: "How appraisal logic, renovation economics, and a family’s actual needs change the answer.", tone: "ocean" },
-      { kicker: "SERIES", title: "What the listing doesn’t tell you", description: "Field notes on value, risk, and decision-making in Oʻahu real estate.", tone: "sand" },
-      { kicker: "MILESTONE", title: "Recognition earned across a decade", description: "What repeated client nominations say about the standard after closing.", tone: "ink" }
+      { kicker: "CASE STUDY", title: "The judgment behind a waterfront acquisition", description: "How appraisal logic, renovation economics, and a family’s actual needs can change the answer.", tone: "ocean", status: "Proposed series", evidence: ["Mark’s appraisal-and-analysis background is documented by True Real Estate Hawaiʻi."] },
+      { kicker: "SERIES", title: "What the listing doesn’t tell you", description: "Field notes on value, risk, and decision-making in Oʻahu real estate.", tone: "sand", status: "Proposed series", evidence: ["Strategic format derived from Mark’s documented finance and appraisal foundation."] },
+      { kicker: "MILESTONE", title: "Recognition earned across a decade", description: "A transparent look at the company-published recognition record—and the service standard it is meant to represent.", tone: "ink", status: "Proposed series", evidence: ["True Real Estate Hawaiʻi publishes annual recognition and nomination records spanning more than a decade."] }
     ],
     posts: [
-      { date: "3d", text: "A view can sell a showing. It cannot rescue the wrong basis.\n\nFor a waterfront property, I want to understand the seawall, flood exposure, deferred maintenance, renovation history, insurance reality—and only then the photograph. Beauty belongs in the analysis. It should never replace it.\n\nHere are the five questions I would ask before making an offer on an Oʻahu waterfront home.", reactions: 284, comments: 31, reposts: 18, art: "water" },
-      { date: "1w", text: "The best negotiation often happens before anyone writes a number.\n\nIt happens when an advisor listens long enough to learn what the other side must protect—and what your own client can stop pretending matters. Preparation creates options. Options create leverage.", reactions: 191, comments: 22, reposts: 11, art: "keys" }
+      { date: "Concept", status: "Proposed post", strategy: "Convert appraisal discipline into an immediately useful waterfront diligence framework.", text: "A view can win the showing. It cannot rescue the wrong basis.\n\nBefore letting the horizon set the price, put the unphotogenic facts back into the decision: shoreline condition, flood exposure, deferred maintenance, renovation history, insurance, and the cost of being wrong.\n\nBeauty belongs in the analysis. It should never be allowed to replace it.\n\nFive questions I would answer before writing an offer on an Oʻahu waterfront home.", reactions: 0, comments: 0, reposts: 0, art: "water", evidence: [{ label: "True Real Estate Hawaiʻi — appraisal and analyst background", url: "https://truerealestatehawaii.com/agent/mark-young/" }] },
+      { date: "Concept", status: "Proposed post", strategy: "Demonstrate Mark’s client-centered negotiation philosophy without implying a specific transaction.", text: "The most valuable part of a negotiation may happen before anyone writes a number.\n\nIt happens when preparation separates preference from necessity: what our client must protect, what the other side may need, which risks deserve a price, and which terms could create room that money alone cannot.\n\nPreparation does more than produce confidence. It produces options. Options are where leverage begins.", reactions: 0, comments: 0, reposts: 0, art: "keys", evidence: [{ label: "True Real Estate Hawaiʻi — professional biography", url: "https://truerealestatehawaii.com/agent/mark-young/" }] }
     ],
     sources: [
       { label: "True Real Estate Hawaiʻi biography", url: "https://truerealestatehawaii.com/agent/mark-young/" },
@@ -69,7 +113,27 @@ export const profiles: Record<"mark" | "sam", Profile> = {
     location: "Honolulu County, Hawaiʻi, United States",
     company: "Real Estate Investment Advisory",
     school: "University of Hawaiʻi at Mānoa",
-    connections: "500+ connections",
+    connections: "Evidence-linked public profile",
+    editorialPosition: {
+      thesis: "The systems translator for land, energy, policy, and return.",
+      distinction: "Sam’s public record crosses water technology, residential solar development, municipal neighborhood administration, commercial-property advising, and elected neighborhood service. The coherent story is not a single industry; it is translation across systems that meet in place.",
+      promise: "Make the policy, infrastructure, finance, and community conditions inside a property decision intelligible enough to act on."
+    },
+    strategyLayers: [
+      { id: "transition", label: "Residential-to-commercial", audience: "Residential investors evaluating commercial property", tension: "Familiar confidence collides with a different vocabulary of leases, tenants, debt, diligence, and operating risk.", editorialMove: "Teach the transition as a sequence of changed questions rather than a status upgrade or asset-class sales pitch.", outcome: "Better-prepared advisory conversations with investors who understand the risks they are choosing." },
+      { id: "owners", label: "Local owners and operators", audience: "Small property and business owners making occupancy and capital decisions", tension: "Permitting, energy, infrastructure, and policy appear outside the spreadsheet until they alter cost, timing, or feasibility.", editorialMove: "Translate a public-system change into the private decision it modifies, with the primary record attached.", outcome: "Trust from owners who need context before they need a transaction." },
+      { id: "civic", label: "Civic stakeholders", audience: "Neighborhood participants, public servants, and place-based organizations", tension: "Public debate often collapses a real tradeoff into two performative positions.", editorialMove: "Model balanced, source-visible analysis that names safety, access, cost, implementation, and who carries each consequence.", outcome: "A credible public voice whose usefulness does not depend on winning every argument." },
+      { id: "energy", label: "Energy and property", audience: "Property, infrastructure, and renewable-energy professionals", tension: "Operating systems are analyzed in silos even though owners experience them as one asset.", editorialMove: "Connect energy design, incentives, resilience, operating cost, and property value through visual system maps.", outcome: "Cross-sector advisory and collaboration opportunities grounded in Sam’s documented experience." }
+    ],
+    contentEngine: {
+      northStar: "Every piece should reconnect a financial model to the place and public systems it abstracts away.",
+      cadence: "One weekly systems explainer, one twice-monthly primary-source translation, one monthly investor transition lesson, and one quarterly field essay.",
+      series: [
+        { name: "The Place Belongs in the Model", purpose: "Show how infrastructure, policy, and community conditions become asset fundamentals.", formats: ["system map", "field note", "evidence-linked essay"], conversion: "Investment or cross-sector advisory conversation" },
+        { name: "Public Meeting, Private Consequence", purpose: "Translate civic records into concrete implications without assigning a board position to one member.", formats: ["source annotation", "90-second explainer", "monthly briefing"], conversion: "Subscription and stakeholder dialogue" },
+        { name: "Change the Asset, Change the Questions", purpose: "Prepare residential investors for commercial-property diligence and risk.", formats: ["framework carousel", "scenario memo", "live Q&A"], conversion: "Commercial-transition assessment" }
+      ]
+    },
     about: [
       "The spreadsheet is never the whole place.",
       "I work where property, energy, public policy, and community life collide—translating systems that are easy to discuss separately and impossible to experience that way. My path has moved from water technology and residential solar development to Honolulu neighborhood administration, commercial real-estate investment advising, and elected neighborhood service.",
@@ -87,13 +151,13 @@ export const profiles: Record<"mark" | "sam", Profile> = {
     ],
     education: [{ school: "University of Hawaiʻi at Mānoa", degree: "B.A., Political Science / Political Theory", dates: "Class of 2014" }],
     featured: [
-      { kicker: "FRAMEWORK", title: "Land, energy, policy, return", description: "Four lenses for evaluating a Hawaiʻi real-estate decision.", tone: "green" },
-      { kicker: "FIELD NOTE", title: "What solar taught me about property", description: "Infrastructure changes the investment before it changes the spreadsheet.", tone: "sun" },
-      { kicker: "EXPLAINER", title: "From one rental to commercial real estate", description: "The questions to answer before changing asset classes.", tone: "ink" }
+      { kicker: "FRAMEWORK", title: "Land, energy, policy, return", description: "Four lenses for evaluating a Hawaiʻi real-estate decision without abstracting the place away.", tone: "green", status: "Proposed series", evidence: ["This framework synthesizes Sam’s documented solar, civic, and real-estate work; it is an editorial proposal, not a past publication."] },
+      { kicker: "FIELD NOTE", title: "What solar taught me about property", description: "Infrastructure changes the investment before it changes the spreadsheet.", tone: "sun", status: "Proposed series", evidence: ["MidWeek documents Sam’s role designing custom residential solar systems and navigating financing and incentives."] },
+      { kicker: "EXPLAINER", title: "From one rental to commercial real estate", description: "The questions that change when an investor changes asset classes.", tone: "ink", status: "Proposed series", evidence: ["The advisory theme is corroborated only at public-index level and should be confirmed before publication in Sam’s voice."] }
     ],
     posts: [
-      { date: "2d", text: "In Hawaiʻi, a property decision is also an infrastructure decision.\n\nEnergy cost, grid constraints, water, transportation, insurance, permitting, and community acceptance are not ‘externalities.’ They are part of the asset.\n\nThe strongest underwriting begins by putting the place back into the model.", reactions: 247, comments: 38, reposts: 29, art: "grid" },
-      { date: "6d", text: "Residential investors often ask when they are ‘ready’ for commercial real estate.\n\nThe better question: which new risks are you now prepared to understand? Commercial property changes the vocabulary—leases, tenants, debt, diligence—but judgment still begins with cash flow, downside, and the reason this particular asset should exist.", reactions: 173, comments: 19, reposts: 15, art: "city" }
+      { date: "Concept", status: "Proposed post", strategy: "Unify Sam’s energy, civic, and property experience under one memorable analytical idea.", text: "In Hawaiʻi, a property decision is also an infrastructure decision.\n\nEnergy, water, transportation, insurance, permitting, and community legitimacy are often treated as context surrounding the asset. Owners experience them differently: as cost, delay, resilience, access, and risk.\n\nThe model becomes more honest when the place is put back inside it.", reactions: 0, comments: 0, reposts: 0, art: "grid", evidence: [{ label: "MidWeek — RevoluSun project-developer appointment", url: "https://www.midweek.com/business-leaders-move-hawaii-92414/" }, { label: "City and County of Honolulu — Samuel Wolff member page", url: "https://www.honolulu.gov/nco/member_bio/samuel-wolff/" }] },
+      { date: "Concept", status: "Proposed post", strategy: "Create a credible education bridge for residential investors without asserting unverified employer details.", text: "Residential investors sometimes ask when they are ‘ready’ for commercial real estate.\n\nReadiness is not a larger down payment or a more impressive asset. It is the willingness to learn which risks have changed.\n\nLeases, tenant quality, debt structure, capital work, and diligence alter the vocabulary. The durable questions remain: Where does the cash flow come from? What breaks it? Who carries the downside? Why should this asset exist here?\n\nChange the asset. Change the questions before you change the allocation.", reactions: 0, comments: 0, reposts: 0, art: "city", evidence: [{ label: "Public professional-role index — verification boundary applies", url: "https://www.linkedin.com/in/samuel-wolff-4862303b" }] }
     ],
     sources: [
       { label: "University and current-role index", url: "https://www.linkedin.com/in/samuel-wolff-4862303b" },
