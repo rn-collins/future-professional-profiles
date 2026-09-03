@@ -30,6 +30,7 @@ assert.match(route, /What would this require from me\?/, "time and participation
 assert.match(route, /What this page already proves/, "the experience must make RN Studio's demonstrated value explicit");
 assert.match(route, /rel=["']noreferrer["']/, "external evidence links need referrer protection");
 assert.match(css, /@media\(max-width:520px\)/, "small mobile layout is required");
+assert.match(css, /\.page\s*\{[^}]*display:block/, "route must neutralize the legacy global main grid");
 assert.match(css, /@media\(prefers-reduced-motion:reduce\)/, "reduced-motion handling is required");
 assert.match(css, /@media print/, "print/PDF treatment is required");
 assert.match(css, /\.proofStrip,\.sample,\.darkCard,\.finalCta,\.footer\{color:var\(--ink\);background:white!important/, "print must not leave light copy dependent on background graphics");
