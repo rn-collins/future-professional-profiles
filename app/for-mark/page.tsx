@@ -83,6 +83,7 @@ export default function ForMarkPage() {
         <nav aria-label="Presentation sections">
           <a href="#opportunity">Idea</a>
           <a href="#demonstration">Example</a>
+          <Link href="/for-mark/research">Research</Link>
           <a href="#pilot">Engagement</a>
         </nav>
         <PrintButton />
@@ -149,6 +150,10 @@ export default function ForMarkPage() {
           <p>“The advisor who sees beneath the listing.”</p>
           <div>Let people watch him think before they decide whom to call.</div>
         </blockquote>
+        <aside className={styles.researchPreview} aria-labelledby="research-preview-title">
+          <div><p className={styles.eyebrow}>Market, audience, and search research</p><h3 id="research-preview-title">The opening is narrower—and stronger—than a generic real-estate content plan.</h3><p>Public evidence points to decision-grade questions about condominium finances, value versus price, insurance and flood exposure, seller pricing, and investor downside. It also shows a crowded field of market updates, relocation guides, and luxury showcases.</p></div>
+          <div><p><b>What the research supports:</b> Build recurring decision tools that show what Mark would verify, what changes the answer, and where clients need another licensed professional.</p><p><b>What it does not prove:</b> Keyword volume, conversion demand, or Mark’s client mix. Those require paid datasets and first-party validation.</p><Link className={styles.secondary} href="/for-mark/research">Open the research dossier</Link></div>
+        </aside>
       </section>
 
       <section className={styles.section} id="demonstration" aria-labelledby="demonstration-title">
