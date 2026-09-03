@@ -1,6 +1,16 @@
 import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const productRoutes = [
+    ["strategy-lab", 0.9],
+    ["studio", 0.9],
+    ["opportunities", 0.85],
+    ["intelligence", 0.8],
+    ["provenance", 0.8],
+    ["engage", 0.8],
+    ["workspace", 0.7],
+  ] as const;
+
   return [
     {
       url: "https://future-professional-profiles.vercel.app/",
@@ -14,12 +24,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly" as const,
       priority: 0.9,
     })),
-    {
-      url: "https://future-professional-profiles.vercel.app/intelligence",
+    ...productRoutes.map(([route, priority]) => ({
+      url: `https://future-professional-profiles.vercel.app/${route}`,
       lastModified: new Date("2026-09-03T00:00:00.000Z"),
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
+      changeFrequency: "weekly" as const,
+      priority,
+    })),
     {
       url: "https://future-professional-profiles.vercel.app/corrections",
       lastModified: new Date("2026-09-03T00:00:00.000Z"),

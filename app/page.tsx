@@ -6,6 +6,7 @@ import { track } from "@vercel/analytics";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { profiles, type Profile } from "./data";
 import EditorialOperatingSystem from "./components/EditorialOperatingSystem";
+import ProductNavigation from "./components/ProductNavigation";
 import ConceptBoundary from "./components/ConceptBoundary";
 
 type ProfileKey = "mark" | "sam";
@@ -693,6 +694,7 @@ export default function Home() {
         </button>
       </section>
       <ConceptBoundary />
+      <ProductNavigation className="productNav homeProductNav" />
       <main>
         <div className="mainColumn">
           <ProfileHero p={p} lens={lens} />

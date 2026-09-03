@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import ProductNavigation from "../components/ProductNavigation";
 
 const issueUrl = "https://github.com/rn-collins/future-professional-profiles/issues/new?template=correction-or-takedown.md&title=Correction%20or%20takedown%20request";
 
@@ -16,6 +17,7 @@ export default function CorrectionsPage() {
         <Link href="/">← Future Professional Profiles</Link>
         <span>RN Studio · Evidence governance</span>
       </nav>
+      <ProductNavigation className="productNav" />
       <header>
         <p className="sectionLabel">Corrections, rights, and removal</p>
         <h1>Tell us what needs to change.</h1>

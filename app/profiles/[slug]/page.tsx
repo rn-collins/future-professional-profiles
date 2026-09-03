@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import ProfileTools from "../../components/ProfileTools";
 import EditorialOperatingSystem from "../../components/EditorialOperatingSystem";
 import ConceptBoundary from "../../components/ConceptBoundary";
+import ProductNavigation from "../../components/ProductNavigation";
 import { profiles, type Profile } from "../../data";
 
 type ProfileSlug = keyof typeof profiles;
@@ -96,6 +97,7 @@ export default async function StandaloneProfile({
         <Link href={`/?profile=${profile.slug}`}>← Interactive profile</Link>
         <span><Link href="/intelligence">Search intelligence</Link> · RN Studio</span>
       </nav>
+      <ProductNavigation className="productNav" />
       <ConceptBoundary />
       <header className="briefHero">
         <div className="briefPortrait">
