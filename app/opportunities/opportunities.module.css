@@ -120,3 +120,4 @@
 
 @media(prefers-reduced-motion:reduce){.page *{scroll-behavior:auto!important}
 }
+.controls>*{min-width:0}.jump{max-width:100%;overflow-x:auto}

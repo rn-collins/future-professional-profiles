@@ -5,3 +5,4 @@
 @media(max-width:760px){.nav{align-items:flex-start;flex-wrap:wrap}.nav span{order:3;margin:0;width:100%}}
 @media print{.shell{max-width:none;padding:0}.nav,.controls,.footer{display:none}.hero{padding:20px 0}.section{padding:28px 0}.stageTabs{display:none}.stagePanel{min-height:0}.choiceList{display:none}.journeyLayout{grid-template-columns:1fr}.scenarioGrid{grid-template-columns:repeat(2,1fr)}.scenarioGrid article,.scenarioGrid article:nth-child(1),.scenarioGrid article:nth-child(2){grid-column:auto;background:#fff;color:#000;border:1px solid #777;break-inside:avoid}}
 .experimentNote{display:inline-block;margin-top:17px!important;padding:8px 10px;border:1px solid #cabf9f;border-radius:5px;background:#fffdf6;color:#544c38!important;font-size:11px!important;line-height:1.45!important}
+.journeyLayout>*{min-width:0}.journeyCard{overflow-wrap:anywhere}
