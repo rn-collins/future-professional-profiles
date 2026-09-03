@@ -14,7 +14,7 @@ const checks = [
   ["/manifest.webmanifest", 200, "RN Profiles"],
   ["/robots.txt", 200, "Sitemap"],
   ["/sitemap.xml", 200, "/profiles/mark"],
-  ["/definitely-missing", 404, "Page not found"],
+  ["/definitely-missing", 404, "This evidence record does not exist."],
 ];
 
 let failures = 0;
