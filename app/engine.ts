@@ -31,7 +31,8 @@ function claimMatchesQuery(claim: EvidenceClaim, sourceMap: Map<string, Evidence
   const queryTokens = tokens(query);
   if (!queryTokens.length) return false;
   const body = `${claim.claim} ${claim.boundary ?? ""} ${claim.sourceIds.map((id) => sourceMap.get(id)?.title ?? "").join(" ")}`.toLowerCase();
-  return queryTokens.some((token) => body.includes(token));
+  const bodyTokens = new Set(tokens(body));
+  return queryTokens.some((token) => bodyTokens.has(token));
 }
 
 export function answerEvidenceQuestion(slug: ProfileSlug, question: string) {
