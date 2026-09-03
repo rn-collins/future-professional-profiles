@@ -9,7 +9,7 @@ const checks = [
   ["/strategy-lab", 200, "Interactive positioning prototype"],
   ["/opportunities", 200, "Opportunity Intelligence"],
   ["/provenance", 200, "What we know."],
-  ["/workspace", 200, "Move drafts through evidence"],
+  ["/workspace", 200, "Opening this browser’s workspace"],
   ["/engage", 200, "Build the public evidence of consequential work"],
   ["/api/profiles", 200, "mark"],
   ["/api/profiles/mark", 200, "Mark H. Young"],
