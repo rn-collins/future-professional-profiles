@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import markYoungPortrait from "../../public/mark-young.jpg";
 import Link from "next/link";
 import styles from "./for-mark.module.css";
 import PrintButton from "./PrintButton";
@@ -102,7 +103,15 @@ export default function ForMarkPage() {
         </div>
         <figure className={styles.portrait}>
           <div className={styles.imageFrame}>
-            <Image src={markPrivateData.image} alt="Mark H. Young" fill priority sizes="(max-width: 760px) 82vw, 38vw" />
+            <Image
+              src={markYoungPortrait}
+              alt="Mark H. Young"
+              fill
+              priority
+              placeholder="blur"
+              quality={75}
+              sizes="(max-width: 520px) calc(100vw - 2rem), (max-width: 860px) 460px, 38vw"
+            />
           </div>
           <figcaption>
             <span>Mark H. Young</span>
@@ -151,8 +160,8 @@ export default function ForMarkPage() {
           <div>Let people watch him think before they decide whom to call.</div>
         </blockquote>
         <aside className={styles.researchPreview} aria-labelledby="research-preview-title">
-          <div><p className={styles.eyebrow}>Market, audience, and search research</p><h3 id="research-preview-title">The opening is narrower—and stronger—than a generic real-estate content plan.</h3><p>Public evidence points to decision-grade questions about condominium finances, value versus price, insurance and flood exposure, seller pricing, and investor downside. It also shows a crowded field of market updates, relocation guides, and luxury showcases.</p></div>
-          <div><p><b>What the research supports:</b> Build recurring decision tools that show what Mark would verify, what changes the answer, and where clients need another licensed professional.</p><p><b>What it does not prove:</b> Keyword volume, conversion demand, or Mark’s client mix. Those require paid datasets and first-party validation.</p><Link className={styles.secondary} href="/for-mark/research">Open the research dossier</Link></div>
+          <div><p className={styles.eyebrow}>What buyers, sellers, and owners need help deciding</p><h3 id="research-preview-title">Mark’s strongest subjects are the questions that require judgment.</h3><p>Public evidence points to decision-grade questions about condominium finances, value versus price, insurance and flood exposure, seller pricing, and investor downside. It also shows a crowded field of market updates, relocation guides, and luxury showcases.</p></div>
+          <div><p><b>What the public evidence suggests:</b> Build recurring decision tools that show what Mark would verify, what changes the answer, and where clients need another licensed professional.</p><p><b>What we still need to learn from Mark:</b> His priority clients, transaction mix, service areas, referral relationships, and the language real clients use. Measured search volume and conversion demand require paid datasets and first-party analytics.</p><Link className={styles.secondary} href="/for-mark/research">Open the research dossier</Link></div>
         </aside>
       </section>
 
@@ -206,11 +215,11 @@ export default function ForMarkPage() {
           <div className={styles.advantageGrid}>
             <article>
               <h3>Deep research</h3>
-              <p>I study your work, market, audience, competitors, search behavior, and source record until the useful pattern is clear.</p>
+              <p>I examine your work, public record, market, audiences, competitors, and the questions people search before recommending what to make.</p>
             </article>
             <article>
               <h3>Original opportunities</h3>
-              <p>I turn overlooked experience into series, tools, partnerships, client education, and new ways to earn attention.</p>
+              <p>I look beyond individual posts for useful series, client resources, partnerships, and subjects your experience allows you to explain well.</p>
             </article>
             <article>
               <h3>On-brand writing</h3>
@@ -218,51 +227,41 @@ export default function ForMarkPage() {
             </article>
             <article>
               <h3>Business purpose</h3>
-              <p>Each piece should help the right people find you, understand how you think, trust your judgment, and know when to call.</p>
+              <p>Every piece should help the right person understand your judgment, make a better decision, or know when to call.</p>
             </article>
           </div>
-          <p className={styles.advantageClose}>Research continues throughout the engagement. It shapes what we make next and can uncover opportunities outside the original content plan.</p>
+          <p className={styles.advantageClose}>Research continues throughout the engagement. It shapes what we make next and can uncover opportunities outside the original content plan.</p><div className={styles.credentials}><p className={styles.eyebrow}>Why RN</p><h3>The person who finds the idea also makes the work.</h3><p>I am a researcher, writer, strategist, and hands-on producer. My work has included research at Harvard Business School, writing instruction as a Boston University Writing Fellow, regulatory and education work with the Yale Program for Psychedelic Science, and published long-form writing.</p><p>I hold graduate degrees in developmental psychology and anatomy and neurobiology, and I am now studying law at Northeastern. That background taught me to find the useful question, follow the evidence, understand how different audiences make decisions, and turn complex expertise into clear work people can use.</p><p>I would do that work personally for you, from the first interview through the research, writing, design, and final preparation.</p></div>
         </aside>
+        <div className={styles.pilotIntro}>
+          <p className={styles.eyebrow}>04 · A practical first engagement</p>
+          <h2 id="pilot-title">A 90-day pilot built around useful work.</h2>
+          <p>The first three months would establish the strategy, produce the first pieces, and give us enough evidence to decide what deserves continued investment. You would work directly with RN Studio throughout. There is no handoff to junior staff.</p>
+          <p>We would begin with the audience and business priority that matter most now. This schedule is illustrative and would change as we learn from you, the available evidence, and the response to the work.</p>
+        </div>
+        <div className={styles.pilotMonths}>
+          <article><span>Month 1</span><h3>Find the position and build the foundation</h3><ul><li>One focused voice and strategy interview</li><li>Priority-audience, competitor, search-result, and source review</li><li>Refined positioning, profile language, and editorial direction</li><li>One source-backed flagship piece and smaller adaptations</li><li>A prioritized 90-day editorial backlog</li></ul></article>
+          <article><span>Month 2</span><h3>Establish a recognizable series</h3><ul><li>Continued audience and market research</li><li>The first installment of a recurring decision-focused series</li><li>Writing, fact-checking, design, and channel preparation</li><li>Useful adaptations and review of early audience signals</li><li>A recommendation for the next production priority</li></ul></article>
+          <article><span>Month 3</span><h3>Turn the work into a repeatable system</h3><ul><li>A second major piece chosen from the evidence gathered</li><li>A client-education, referral, or market-intelligence resource</li><li>Supporting adaptations for the agreed channels</li><li>A review of what helped people understand your judgment</li><li>A next-quarter editorial and business recommendation</li></ul></article>
+        </div>
+        <p className={styles.pilotBoundary}>This is an illustrative sequence, not a promise that every possible format will be produced. The exact mix depends on the subject, evidence requirements, complexity, your review time, and any permissions needed.</p>
         <div className={styles.pilotGrid}>
           <div>
-            <p className={styles.eyebrow}>04 · A practical first engagement</p>
-            <h2 id="pilot-title">Work through the plan one piece at a time.</h2>
-            <p>You work directly with RN Studio across research, positioning, opportunity development, writing, design, and review. We would choose the first audience and subject together, complete that piece, and then move to the next priority.</p>
-            <p>The first 90 days would give us enough work to judge what people respond to, what helps your clients, and what should come next.</p>
+            <h3>What the working rhythm looks like</h3>
+            <p>One primary piece moves through research, writing, design, fact-checking, and approval at a time. As soon as that piece is approved or completed, the next priority enters production.</p>
+            <p>This limits simultaneous work; it does not mean one deliverable per month. Research, planning, performance review, and smaller adaptations can continue while the primary piece is active.</p>
+            <h3>What I need from you</h3>
+            <p>The usual rhythm would be one focused conversation for each major piece and one consolidated review. RN Studio handles the research, drafting, editing, design, sourcing, and preparation. Nothing written in your voice is published without your approval.</p>
+            <h3>How we judge the pilot</h3>
+            <p>Before production begins, we agree on the business priority and the signals worth watching: qualified questions, useful introductions, referral conversations, client responses, saves, replies, or clearer understanding of your judgment.</p>
+            <h3>After 90 days</h3>
+            <p>Either party may stop at the end of the pilot. If we both want to continue, the engagement becomes month to month at the agreed scope and rate. Any change in production capacity or scope would be agreed in writing first.</p>
           </div>
           <div className={styles.deliverables}>
-            <div className={styles.priceBlock}>
-              <span>Monthly subscription</span>
-              <div><strong>$5,000</strong><small>per month</small></div>
-              <p>One primary deliverable moves through production at a time, from research through your approval. The limit controls work in progress; it does not cap monthly output. Research, planning, measurement, and smaller adaptations continue around the active piece.</p>
-            </div>
-            <h3>Included every month</h3>
-            <ul>
-              <li>Audience, market, competitor, search, and reputation research</li>
-              <li>Positioning, messaging, and opportunity development</li>
-              <li>Original editorial series and campaign concepts</li>
-              <li>Interviews and source gathering</li>
-              <li>Writing, editing, and fact-checking</li>
-              <li>Design and preparation for the agreed channels</li>
-              <li>Evidence links, attribution, and image-permission guidance</li>
-              <li>Reasonable revisions to the active piece</li>
-              <li>Smaller adaptations made from the active piece</li>
-              <li>A rolling 90-day plan and prioritized backlog</li>
-              <li>Performance review and recommendations for what to make next</li>
-            </ul>
-            <div className={styles.scopeNote}>
-              <h3>Quoted separately</h3>
-              <ul>
-                <li>Multiple primary deliverables produced at the same time</li>
-                <li>Daily posting, inbox work, or community management</li>
-                <li>Paid advertising and media spend</li>
-                <li>Professional photography, video crews, travel, or events</li>
-                <li>Printing, licensing, software, data, or other outside costs</li>
-                <li>Website development, public relations outreach, or crisis communications</li>
-                <li>Rush work or revisions beyond the agreed review process</li>
-              </ul>
-            </div>
-            <p>Each month is paid before work begins. The subscription continues month to month and may be paused or canceled before the next billing period. The amount completed will depend on the work chosen, its complexity, and review time. Audience growth, leads, transactions, revenue, and search rankings cannot be guaranteed.</p>
+            <div className={styles.priceBlock}><span>90-day pilot</span><div><strong>$5,000</strong><small>per month</small></div><p>Billed monthly for three months. You work directly with RN Studio from the first interview through final preparation.</p></div>
+            <h3>Included during the pilot</h3>
+            <ul><li>Audience, market, competitor, search-result, and reputation research</li><li>Positioning, messaging, and original editorial opportunities</li><li>Interviews and source gathering</li><li>Editorial concepts and a prioritized production backlog</li><li>Writing, editing, design, and fact-checking</li><li>Preparation for the agreed channels</li><li>Evidence links, attribution, and image-permission guidance</li><li>One consolidated revision process for each primary piece, with reasonable corrections</li><li>Smaller adaptations created from approved primary work</li><li>A rolling 90-day plan, performance review, and next-step recommendations</li></ul>
+            <div className={styles.scopeNote}><h3>Quoted separately</h3><ul><li>Multiple primary pieces produced simultaneously</li><li>Daily publishing, inbox work, or community management</li><li>Paid advertising, sponsorships, and media spend</li><li>Professional photography, filming crews, travel, and event production</li><li>Printing, licensing, paid datasets, software, and outside costs</li><li>Full website development, public-relations outreach, and crisis communications</li><li>Rush production or revision cycles outside the agreed process</li></ul></div>
+            <p>Audience growth, leads, transactions, revenue, and search rankings cannot be guaranteed. The pilot is designed to produce strong work, observe credible signals, and determine whether the system merits continued investment.</p>
           </div>
         </div>
 
