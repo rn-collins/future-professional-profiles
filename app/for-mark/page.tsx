@@ -97,7 +97,7 @@ export default function ForMarkPage() {
             <a className={styles.primary} href="#opportunity">See the opportunity</a>
             <a className={styles.secondary} href="#pilot">Review the pilot</a>
           </div>
-          <p className={styles.boundary}><b>Before you read:</b> RN Studio made this without being asked. You have not reviewed or approved it, and there is no business relationship to disclose. Every recommendation remains a draft.</p>
+          <p className={styles.boundary}><b>Before you read:</b> You did not ask for this, and you have not reviewed or approved it. Every recommendation is still a draft.</p>
         </div>
         <figure className={styles.portrait}>
           <div className={styles.imageFrame}>
@@ -129,7 +129,7 @@ export default function ForMarkPage() {
             <ul>
               <li>Founder and president of an independent Hawaiʻi brokerage.</li>
               <li>Finance education and earlier appraisal experience.</li>
-              <li>A company-published recognition history and public listing activity across Oʻahu.</li>
+              <li>A company-published recognition history and an active Oʻahu practice.</li>
             </ul>
             <p className={styles.note}>The credibility is already there. The harder problem is distinction: many accomplished agents lead with the same categories.</p>
           </article>
@@ -195,9 +195,9 @@ export default function ForMarkPage() {
 
       <section className={styles.section} id="pilot" aria-labelledby="pilot-title">
         <aside className={styles.demonstrated} aria-labelledby="demonstrated-title">
-          <p className={styles.eyebrow}>A first sample</p>
+          <p className={styles.eyebrow}>What I made for you</p>
           <h2 id="demonstrated-title">I wanted to show the work instead of describing it.</h2>
-          <p>I researched your public record, checked the claims, found the clearest opening, developed the series, wrote an example, and built the page you are reading. That is the service in miniature.</p>
+          <p>I researched your public record, checked the claims, found the clearest opening, developed the series, wrote an example, and built the page you are reading. Now you can judge the work itself.</p>
         </aside>
         <div className={styles.pilotGrid}>
           <div>
@@ -221,7 +221,7 @@ export default function ForMarkPage() {
         </div>
 
         <div className={styles.objections}>
-          <h3>The reasonable questions</h3>
+          <h3>Questions you may have</h3>
           <details><summary>“I do not want another job.”</summary><p>You would bring the judgment and approve the final work. RN Studio would do the research, writing, design, editing, and preparation for each channel.</p></details>
           <details><summary>“How much of my time would this take?”</summary><p>We would agree on a manageable interview and review schedule before starting. A typical cycle would include one focused conversation and one consolidated review, but the schedule would follow the work we choose.</p></details>
           <details><summary>“How would it sound like me?”</summary><p>The current example is RN Studio’s writing. An engagement would begin by recording how you explain decisions, which words you use, and what you would never say. Nothing written in your voice would be published until you approve it.</p></details>
@@ -245,12 +245,12 @@ export default function ForMarkPage() {
       </section>
 
       <section className={styles.sources} id="sources" aria-labelledby="sources-title">
-        <div><p className={styles.eyebrow}>Sources</p><h2 id="sources-title">What I used.</h2><p>These pages support the public facts used in this draft. They do not imply that Mark or any publisher approves the proposal.</p></div>
+        <div><p className={styles.eyebrow}>Sources</p><h2 id="sources-title">Sources for the facts on this page.</h2><p>These pages support the public facts used in this draft. They do not imply that Mark or any publisher approves the proposal.</p></div>
         <ul>{markPrivateSources.map((source) => <li key={source.url}><SourceLink href={source.url}>{source.label}</SourceLink></li>)}</ul>
       </section>
 
       <footer className={styles.footer}>
-        <p><b>Prepared independently by RN Studio.</b> Mark H. Young and True Real Estate Hawaiʻi did not commission or approve this private draft. It is not affiliated with LinkedIn or the publishers cited above.</p>
+        <p><b>RN Studio prepared this independently.</b> Mark H. Young and True Real Estate Hawaiʻi did not commission or approve this private draft. The cited publishers are sources, not sponsors.</p>
         <p>Everything proposed here remains a draft. For a correction or removal request, see the <Link href="/for-mark/corrections">private reply instructions</Link>.</p>
       </footer>
     </main>

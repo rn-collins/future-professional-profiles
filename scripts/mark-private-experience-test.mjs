@@ -29,7 +29,7 @@ assert.match(route, /License number listed by HBR/, "license identifier must not
 assert.match(route, /An Oʻahu broker with a long local record/, "public-signal framing must avoid unsupported success language");
 assert.match(route, /Founder of True Real Estate Hawaiʻi/, "founder proof must avoid an unnecessary start-year claim");
 assert.match(route, /What I would ask Mark to show/, "unobserved decision method must remain a proposal");
-assert.match(route, /made this without being asked/, "subject relationship boundary must be explicit");
+assert.match(route, /You did not ask for this/, "subject relationship boundary must be explicit");
 assert.match(route, /Working example · Written by RN Studio/, "sample copy must be visibly labeled");
 assert.match(route, /Why this example fits/, "content example must state its factual basis");
 assert.match(route, /How much of my time would this take\?/, "time and participation objection must be answered");

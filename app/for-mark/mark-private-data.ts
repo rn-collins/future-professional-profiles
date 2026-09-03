@@ -25,10 +25,6 @@ export const markPrivateData = {
       label: "True Real Estate Hawaiʻi agent directory",
       url: "https://truerealestatehawaii.com/agents/",
     },
-    activitySnapshot: {
-      label: "Homes.com dated activity snapshot",
-      url: "https://www.homes.com/real-estate-agents/mark-young/wv0wsdk/",
-    },
   },
 } as const;
 
