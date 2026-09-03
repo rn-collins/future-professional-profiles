@@ -14,7 +14,7 @@ const audienceTerms: Record<StudioAudience, string[]> = {
   referral: ["referral", "advisor", "client", "situation", "decision"],
 };
 
-const stopWords = new Set(["what", "which", "with", "that", "this", "from", "their", "about", "does", "have", "show", "could", "would", "should", "into", "more", "most", "they", "them", "then", "than"]);
+const stopWords = new Set(["what", "which", "with", "that", "this", "from", "their", "theirs", "about", "does", "have", "show", "could", "would", "should", "into", "more", "most", "they", "them", "then", "than", "his", "her", "hers"]);
 
 function tokens(value: string) {
   return value.toLowerCase().match(/[a-zʻ’'-]{3,}/g)?.filter((word) => !stopWords.has(word)) ?? [];
