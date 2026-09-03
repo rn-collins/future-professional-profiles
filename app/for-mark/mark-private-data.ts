@@ -29,10 +29,6 @@ export const markPrivateData = {
       label: "Homes.com — dated activity snapshot",
       url: "https://www.homes.com/real-estate-agents/mark-young/wv0wsdk/",
     },
-    recognitionArchive: {
-      label: "Real Producers — 2020 recognition archive",
-      url: "https://www.facebook.com/RealProducersMagazine/photos/congratulations-to-honolulu-real-producers-top-producer-mark-youngmark-young-kno/1046713439083834/",
-    },
   },
 } as const;
 

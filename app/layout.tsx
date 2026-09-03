@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import { Analytics } from "@vercel/analytics/next";
-import { SpeedInsights } from "@vercel/speed-insights/next";
+import SiteTelemetry from "./components/SiteTelemetry";
 import "./globals.css";
 
 const siteUrl = "https://future-professional-profiles.vercel.app";
@@ -70,8 +69,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
-        <Analytics />
-        <SpeedInsights />
+        <SiteTelemetry />
       </body>
     </html>
   );
