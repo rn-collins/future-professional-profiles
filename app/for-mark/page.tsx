@@ -7,14 +7,14 @@ import { markPrivateData, markPrivateSources } from "./mark-private-data";
 
 
 export const metadata: Metadata = {
-  title: "A professional authority system for Mark H. Young",
+  title: { absolute: "A publishing plan for Mark H. Young | RN Studio" },
   description:
-    "A private, evidence-led strategic demonstration prepared for Mark H. Young by RN Studio.",
-  applicationName: "Mark H. Young — Private RN Studio Demonstration",
+    "RN Studio researched Mark H. Young’s public work and prepared this private publishing concept.",
+  applicationName: "Mark H. Young | Private RN Studio draft",
   keywords: [
     "Mark H. Young",
     "True Real Estate Hawaiʻi",
-    "professional authority strategy",
+    "publishing plan for real estate professionals",
     "real estate content strategy",
     "RN Studio",
   ],
@@ -25,16 +25,16 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false, nocache: true },
   referrer: "no-referrer",
   openGraph: {
-    title: "A professional authority system for Mark H. Young",
-    description: "An independent strategic demonstration prepared by RN Studio.",
+    title: "A publishing plan for Mark H. Young",
+    description: "A private working draft prepared by RN Studio.",
     url: "/for-mark",
     siteName: "RN Studio",
-    images: [{ url: "/for-mark/opengraph-image", width: 1200, height: 630, alt: "A professional authority system for Mark H. Young, prepared by RN Studio" }],
+    images: [{ url: "/for-mark/opengraph-image", width: 1200, height: 630, alt: "A publishing plan for Mark H. Young, prepared by RN Studio" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "A professional authority system for Mark H. Young",
-    description: "An independent strategic demonstration prepared by RN Studio.",
+    title: "A publishing plan for Mark H. Young",
+    description: "A private working draft prepared by RN Studio.",
     images: ["/for-mark/opengraph-image"],
   },
 };
@@ -42,30 +42,30 @@ export const metadata: Metadata = {
 const proof = [
   {
     value: "Founder",
-    label: "PBN-documented company leadership",
+    label: "Founder of True Real Estate Hawaiʻi",
     source: "Pacific Business News",
     url: "https://www.bizjournals.com/pacific/news/2021/10/15/true-real-estate-carves-out-market-share.html",
   },
   {
     value: "RS-72387",
-    label: "HBR-listed license number",
+    label: "License number listed by HBR",
     source: "Honolulu Board of REALTORS®",
     url: markPrivateData.sources.directory.url,
   },
   {
-    value: "Finance + appraisal",
-    label: "A documented analytical foundation",
+    value: "Finance and appraisal",
+    label: "Training that shapes the idea on this page",
     source: "True Real Estate Hawaiʻi",
     url: markPrivateData.sources.biography.url,
   },
 ];
 
 const system = [
-  ["01", "Extract the judgment", "One structured conversation turns lived expertise, recurring client questions, and decision patterns into usable source material."],
-  ["02", "Build the evidence", "Every factual statement receives a source, date, confidence level, and review status before it enters a draft."],
-  ["03", "Produce the series", "RN Studio develops the writing, visual logic, repurposing, and publishing package around an agreed point of view."],
-  ["04", "Protect the voice", "Nothing publishes without Mark’s review. Client details, transaction claims, and market conclusions receive additional gates."],
-  ["05", "Learn from response", "Questions, qualified replies, evidence opens, and conversations guide the next cycle—not vanity reach alone."],
+  ["01", "Talk it through", "A recorded conversation gives RN Studio the language, stories, questions, and judgment needed for the first draft."],
+  ["02", "Check every fact", "Each factual statement is tied to a source and dated. Uncertain details stay out until Mark confirms them."],
+  ["03", "Write and design", "RN Studio turns the source material into the agreed series and prepares each piece for its intended channel."],
+  ["04", "Mark reviews", "Mark decides whether the work sounds right and whether any client, transaction, or market detail can appear."],
+  ["05", "Use the response", "Serious questions and relevant introductions help determine what to publish next. Raw reach is secondary."],
 ];
 
 function SourceLink({ href, children }: { href: string; children: React.ReactNode }) {
@@ -75,14 +75,14 @@ function SourceLink({ href, children }: { href: string; children: React.ReactNod
 export default function ForMarkPage() {
   return (
     <main className={styles.page}>
-      <a className={styles.skipLink} href="#opportunity">Skip to the strategic opportunity</a>
+      <a className={styles.skipLink} href="#opportunity">Skip to the idea</a>
       <header className={styles.topbar}>
         <a href="#top" className={styles.brand} aria-label="RN Studio, return to beginning">
           <span aria-hidden="true">RN</span><b>RN Studio</b>
         </a>
         <nav aria-label="Presentation sections">
-          <a href="#opportunity">Opportunity</a>
-          <a href="#demonstration">Demonstration</a>
+          <a href="#opportunity">Idea</a>
+          <a href="#demonstration">Example</a>
           <a href="#pilot">Pilot</a>
         </nav>
         <PrintButton />
@@ -90,14 +90,14 @@ export default function ForMarkPage() {
 
       <section className={styles.hero} id="top" aria-labelledby="hero-title">
         <div className={styles.heroCopy}>
-          <p className={styles.eyebrow}>Prepared for Mark H. Young · Private strategic demonstration</p>
-          <h1 id="hero-title">Your most valuable inventory may be the judgment people cannot see yet.</h1>
-          <p className={styles.lede}>Mark, this is a concrete demonstration of how your public presence could make the reasoning behind consequential property decisions visible—before someone needs an agent.</p>
+          <p className={styles.eyebrow}>Prepared for Mark H. Young · Private working draft</p>
+          <h1 id="hero-title">People can see what you sell. They cannot yet see how you decide.</h1>
+          <p className={styles.lede}>Mark, your finance and appraisal background changes how you read a property. This page shows how that experience could become useful public work before someone calls you.</p>
           <div className={styles.actions}>
             <a className={styles.primary} href="#opportunity">See the opportunity</a>
             <a className={styles.secondary} href="#pilot">Review the pilot</a>
           </div>
-          <p className={styles.boundary}><b>Clear boundary:</b> RN Studio created this independently from public evidence. You did not request, approve, hire, or endorse this work. All future-facing language is a proposal for your review.</p>
+          <p className={styles.boundary}><b>Before you read:</b> RN Studio made this without being asked. You have not reviewed or approved it, and there is no business relationship to disclose. Every recommendation remains a draft.</p>
         </div>
         <figure className={styles.portrait}>
           <div className={styles.imageFrame}>
@@ -106,12 +106,12 @@ export default function ForMarkPage() {
           <figcaption>
             <span>Mark H. Young</span>
             <small>Founder &amp; President · True Real Estate Hawaiʻi</small>
-            <small>Public professional portrait; reuse authorization should be confirmed before external publication.</small>
+            <small>This portrait appears on Mark’s company website. RN Studio would obtain permission before using it publicly.</small>
           </figcaption>
         </figure>
       </section>
 
-      <section className={styles.proofStrip} aria-label="Selected documented foundation">
+      <section className={styles.proofStrip} aria-label="Public facts used on this page">
         {proof.map((item) => <article key={item.value}>
           <strong>{item.value}</strong><p>{item.label}</p><SourceLink href={item.url}>{item.source}</SourceLink>
         </article>)}
@@ -119,139 +119,139 @@ export default function ForMarkPage() {
 
       <section className={styles.section} id="opportunity" aria-labelledby="opportunity-title">
         <div className={styles.sectionIntro}>
-          <p className={styles.eyebrow}>01 · The opportunity</p>
-          <h2 id="opportunity-title">The public record establishes credibility. It does not yet reveal the method.</h2>
+          <p className={styles.eyebrow}>01 · The idea</p>
+          <h2 id="opportunity-title">Your record is credible. The interesting part is still missing.</h2>
         </div>
         <div className={styles.signalGrid}>
           <article>
             <p className={styles.cardLabel}>What a prospect can see now</p>
-            <h3>A locally rooted brokerage leader.</h3>
+            <h3>An Oʻahu broker with a long local record.</h3>
             <ul>
               <li>Founder and president of an independent Hawaiʻi brokerage.</li>
               <li>Finance education and earlier appraisal experience.</li>
               <li>A company-published recognition history and public listing activity across Oʻahu.</li>
             </ul>
-            <p className={styles.note}>These are useful trust signals. They also resemble the categories many accomplished agents lead with.</p>
+            <p className={styles.note}>The credibility is already there. The harder problem is distinction: many accomplished agents lead with the same categories.</p>
           </article>
           <article className={styles.darkCard}>
-            <p className={styles.cardLabel}>The method RN Studio proposes making visible</p>
-            <h3>How Mark could make the hard call legible.</h3>
+            <p className={styles.cardLabel}>What I would ask Mark to show</p>
+            <h3>The decisions behind the transaction.</h3>
             <ul>
-              <li>How appraisal discipline changes what he notices.</li>
-              <li>How he sequences a sale, purchase, negotiation, or investment decision.</li>
-              <li>How local fluency becomes practical risk detection—not atmosphere.</li>
-              <li>How he protects the client when the beautiful answer is not the right one.</li>
+              <li>What his appraisal training makes him notice first.</li>
+              <li>How he orders the decisions in a purchase, sale, negotiation, or investment.</li>
+              <li>Which local details change the risk.</li>
+              <li>When he advises a client to slow down or walk away.</li>
             </ul>
           </article>
         </div>
         <blockquote className={styles.positioning}>
-          <span>RN Studio’s proposed position</span>
+          <span>The position I would test</span>
           <p>“The advisor who sees beneath the listing.”</p>
-          <footer>Make consequential reasoning visible before a prospect ever needs an agent.</footer>
+          <div>Let people watch him think before they decide whom to call.</div>
         </blockquote>
       </section>
 
       <section className={styles.section} id="demonstration" aria-labelledby="demonstration-title">
         <div className={styles.sectionIntro}>
-          <p className={styles.eyebrow}>02 · Content demonstration</p>
-          <h2 id="demonstration-title">Not more real-estate content. A body of useful judgment.</h2>
-          <p>The advantage is not publishing more often. It is showing, with discipline and proof, the reasoning a client would otherwise discover only after hiring you.</p>
+          <p className={styles.eyebrow}>02 · What the content could be</p>
+          <h2 id="demonstration-title">Turn the thinking into work people can use.</h2>
+          <p>Each piece would answer a real property question and show the reasoning behind the answer. Over time, a prospective client could understand how Mark works before making contact.</p>
         </div>
         <div className={styles.seriesGrid}>
-          <article><span>Weekly decision note</span><h3>What the Listing Doesn’t Tell You</h3><p>Expose one overlooked diligence question and show exactly when it changes cost, value, risk, or fit.</p><b>For buyers + investors</b></article>
-          <article><span>Decision-tree carousel</span><h3>Decision Before Transaction</h3><p>Make the hidden sequencing of a move legible: timing, contingencies, carrying cost, leverage, and the household priority beneath each term.</p><b>For families + sellers</b></article>
-          <article><span>Monthly market brief</span><h3>What the Oʻahu Numbers Actually Change</h3><p>Separate a broad headline from the specific segment, place, and decision the underlying data can actually inform.</p><b>For owners + referral partners</b></article>
+          <article><span>Weekly decision note</span><h3>What the Listing Doesn’t Tell You</h3><p>Take one overlooked question and explain when it changes the price, the risk, or the fit.</p><b>For buyers and investors</b></article>
+          <article><span>Decision-tree carousel</span><h3>Decision Before Transaction</h3><p>Walk a household through the order of a move: timing, contingencies, carrying costs, and the priorities that settle a difficult choice.</p><b>For families and sellers</b></article>
+          <article><span>Monthly market brief</span><h3>What the Oʻahu Numbers Actually Change</h3><p>Take one market headline and explain which property, place, and decision it actually applies to.</p><b>For owners and referral partners</b></article>
         </div>
 
         <article className={styles.sample} aria-labelledby="sample-title">
           <div className={styles.sampleMeta}>
-            <span>Proposed post · Not written, published, or approved by Mark</span>
-            <p>Purpose: demonstrate appraisal-informed judgment through an immediately useful diligence frame.</p>
+            <span>Working example · Written by RN Studio</span>
+            <p>Mark has not reviewed this. It shows the kind of practical question the proposed series could address.</p>
           </div>
           <div className={styles.sampleBody}>
             <p className={styles.sampleKicker}>What the listing doesn’t tell you · Concept 01</p>
-            <h3 id="sample-title">A view can win the showing. It cannot make the wrong property the right decision.</h3>
-            <p>Before letting the horizon set the price, put the unphotogenic facts back into the decision: shoreline condition, flood exposure, deferred maintenance, renovation history, insurance, and the cost of being wrong.</p>
-            <p>Beauty belongs in the analysis. It should never be allowed to replace it.</p>
+            <h3 id="sample-title">The ocean view is obvious. Start with the expensive questions.</h3>
+            <p>A waterfront showing pulls your eyes toward the horizon. Before discussing price, check the shoreline, flood exposure, deferred maintenance, renovation history, insurance, and the cost of a bad assumption.</p>
+            <p>The view matters. So do the risks that never appear in listing photos.</p>
             <p className={styles.sampleClose}>Five questions to answer before writing an offer on an Oʻahu waterfront home.</p>
-            <div className={styles.evidenceBox}><b>Evidence basis</b><p>The strategic premise derives from Mark’s documented finance and appraisal background. The diligence questions are illustrative editorial framing—not attributed advice from Mark. Any publishable or property-specific version would require his technical review, applicable property records, and permission-cleared imagery.</p><SourceLink href={markPrivateData.sources.biography.url}>Professional biography</SourceLink></div>
+            <div className={styles.evidenceBox}><b>Why this example fits</b><p>Mark’s company biography documents his finance and appraisal background. RN Studio wrote the questions above as an example; they are not Mark’s advice. Publication would require his review, the records for the property in question, and photographs we have permission to use.</p><SourceLink href={markPrivateData.sources.biography.url}>Professional biography</SourceLink></div>
           </div>
         </article>
       </section>
 
       <section className={`${styles.section} ${styles.systemSection}`} aria-labelledby="system-title">
         <div className={styles.sectionIntro}>
-          <p className={styles.eyebrow}>03 · The operating system</p>
-          <h2 id="system-title">The work is designed to protect your time, voice, clients, and credibility.</h2>
+          <p className={styles.eyebrow}>03 · How the work gets made</p>
+          <h2 id="system-title">Mark supplies the judgment. RN Studio handles the production.</h2>
         </div>
         <ol className={styles.systemList}>
           {system.map(([number, title, description]) => <li key={number}><span>{number}</span><div><h3>{title}</h3><p>{description}</p></div></li>)}
         </ol>
         <div className={styles.guardrails}>
-          <h3>Publication guardrails</h3>
-          <div><p><b>Allowed</b> Verified career facts, dated market sources, public property records, and clearly labeled professional analysis.</p><p><b>Additional review</b> Client stories, production claims, property imagery, predictions, and any anonymized transaction pattern.</p><p><b>Never</b> Invented testimonials, private client details, fabricated outcomes, manufactured urgency, or a concept represented as past work.</p></div>
+          <h3>Before anything is published</h3>
+          <div><p><b>Ready after fact-checking</b> Career facts, dated market reports, public property records, and Mark’s own analysis.</p><p><b>Needs specific permission</b> Client stories, sales claims, property photographs, forecasts, and transaction examples.</p><p><b>Off limits</b> Invented testimonials, private client details, made-up results, false urgency, and draft work presented as something Mark already published.</p></div>
         </div>
       </section>
 
       <section className={styles.section} id="pilot" aria-labelledby="pilot-title">
         <aside className={styles.demonstrated} aria-labelledby="demonstrated-title">
-          <p className={styles.eyebrow}>What this page already proves</p>
-          <h2 id="demonstrated-title">This is not a list of services RN Studio might perform.</h2>
-          <p>The public-record research, source ledger, positioning, editorial concepts, writing, interaction design, and private presentation you are reviewing are the work itself—applied to your actual professional presence before an engagement existed.</p>
+          <p className={styles.eyebrow}>A first sample</p>
+          <h2 id="demonstrated-title">I wanted to show the work instead of describing it.</h2>
+          <p>I researched your public record, checked the claims, found the clearest opening, developed the series, wrote an example, and built the page you are reading. That is the service in miniature.</p>
         </aside>
         <div className={styles.pilotGrid}>
           <div>
-            <p className={styles.eyebrow}>04 · A focused way to begin</p>
-            <h2 id="pilot-title">One authority system. Ninety days. Built around the questions only you can answer.</h2>
-            <p>The pilot would establish the positioning, extract the knowledge, produce a disciplined first body of work, and create a repeatable approval system your team can continue using.</p>
+            <p className={styles.eyebrow}>04 · A practical first project</p>
+            <h2 id="pilot-title">Start with one useful series and test it for 90 days.</h2>
+            <p>We would choose the audience and subject together. RN Studio would then produce the first body of work and set up a review process that respects your schedule.</p>
           </div>
           <div className={styles.deliverables}>
             <h3>Proposed pilot</h3>
             <ul>
-              <li>Positioning and audience priorities</li>
-              <li>Source-backed professional narrative</li>
-              <li>Three signature editorial series</li>
+              <li>A clear point of view and audience</li>
+              <li>A biography with a source for every fact</li>
+              <li>Three recurring editorial series</li>
               <li>Ninety-day content plan</li>
-              <li>Core long-form piece and repurposing system</li>
-              <li>Voice, evidence, and approval standards</li>
-              <li>Measurement and learning review</li>
+              <li>One substantial article adapted for other channels</li>
+              <li>Writing and approval rules</li>
+              <li>A review at the end of the pilot</li>
             </ul>
-            <p>Scope, cadence, channels, and fee would be defined together after a fit conversation. No invented ROI or predetermined package is implied here.</p>
+            <p>We would agree on the exact work, publishing schedule, channels, and fee before the pilot begins. This draft makes no promise about leads, revenue, or return on investment.</p>
           </div>
         </div>
 
         <div className={styles.objections}>
           <h3>The reasonable questions</h3>
-          <details><summary>“I do not want to become a full-time content creator.”</summary><p>You should not. The system is designed around periodic knowledge capture; RN Studio handles research, structure, drafting, visual direction, and repurposing. Your highest-value role is judgment and approval.</p></details>
-          <details><summary>“What would this require from me?”</summary><p>A focused knowledge-capture conversation, decisions on what remains private, and one consolidated review per production cycle. The exact cadence would be agreed before work begins; this demonstration does not presume unlimited access to your time.</p></details>
-          <details><summary>“How would this still sound like me?”</summary><p>Nothing in this demonstration is presented as your voice. A real engagement begins with language capture, examples, explicit voice rules, and an approval loop. First-person material cannot publish until you recognize yourself in it.</p></details>
-          <details><summary>“What about client privacy and compliance?”</summary><p>Client and transaction material receives a separate evidence gate. Details are used only with appropriate permission, anonymized beyond recognition where that is genuinely sufficient, or excluded. If examples are combined for teaching purposes, they must be explicitly labeled as illustrative—not presented as an actual client or transaction.</p></details>
-          <details><summary>“How would we know whether it is working?”</summary><p>We would establish a baseline, then attribute substantive replies, referral introductions, qualified questions, evidence engagement, and conversations to the ideas that created them. Reach is context—not the verdict.</p></details>
+          <details><summary>“I do not want another job.”</summary><p>You would bring the judgment and approve the final work. RN Studio would do the research, writing, design, editing, and preparation for each channel.</p></details>
+          <details><summary>“How much of my time would this take?”</summary><p>We would agree on a manageable interview and review schedule before starting. A typical cycle would include one focused conversation and one consolidated review, but the schedule would follow the work we choose.</p></details>
+          <details><summary>“How would it sound like me?”</summary><p>The current example is RN Studio’s writing. An engagement would begin by recording how you explain decisions, which words you use, and what you would never say. Nothing written in your voice would be published until you approve it.</p></details>
+          <details><summary>“What about my clients?”</summary><p>We would use client or transaction details only with appropriate permission. Otherwise, the detail would be removed. Any teaching example assembled from more than one situation would be labeled as an illustration.</p></details>
+          <details><summary>“How would we judge the pilot?”</summary><p>Before publishing, we would agree on what counts: relevant replies, useful introductions, qualified questions, or new conversations. Audience size would provide context but would not decide the result by itself.</p></details>
         </div>
       </section>
 
       <section className={styles.finalCta} aria-labelledby="cta-title">
         <p className={styles.eyebrow}>The invitation</p>
-        <h2 id="cta-title">If this makes your existing expertise newly visible, let’s test whether the idea is worth building.</h2>
-        <p>No formal presentation and no assumption of fit. In one conversation, we would identify the business priority, decide whether content is the right instrument, and define what a worthwhile pilot would need to prove.</p>
+        <h2 id="cta-title">Worth a conversation?</h2>
+        <p>I would spend 30 minutes learning which part of the business matters most to you right now. From there, we could decide whether one publishing series is worth testing.</p>
         <div className={styles.actions}><a className={styles.primary} href="#conversation-brief">See the conversation brief</a><a className={styles.secondary} href="#sources">Review the evidence</a></div>
       </section>
 
       <section className={styles.brief} id="conversation-brief" aria-labelledby="brief-title">
-        <p className={styles.eyebrow}>A useful first conversation</p>
-        <h2 id="brief-title">Thirty minutes, three decisions.</h2>
-        <ol><li><b>Priority:</b> Which audience or business conversation matters most now?</li><li><b>Permission:</b> Which parts of Mark’s expertise should become publicly legible—and which should remain private?</li><li><b>Pilot:</b> What is the smallest body of work capable of proving strategic value?</li></ol>
-        <p className={styles.reply}>If RN Studio sent you this link, replying to that message is the intended next step.</p>
+        <p className={styles.eyebrow}>What I would want to learn from you</p>
+        <h2 id="brief-title">The first call would answer these questions.</h2>
+        <ol><li>Which kind of client or business opportunity matters most right now?</li><li>Which parts of your experience are you comfortable discussing publicly?</li><li>What would make a 90-day test worthwhile to you?</li></ol>
+        <p className={styles.reply}>If I sent you this link, reply to my message and we can find a time.</p>
       </section>
 
       <section className={styles.sources} id="sources" aria-labelledby="sources-title">
-        <div><p className={styles.eyebrow}>Evidence ledger</p><h2 id="sources-title">The facts behind this demonstration.</h2><p>Sources establish specific public facts—not Mark’s approval of this strategy or every claim a source may contain.</p></div>
+        <div><p className={styles.eyebrow}>Sources</p><h2 id="sources-title">What I used.</h2><p>These pages support the public facts used in this draft. They do not imply that Mark or any publisher approves the proposal.</p></div>
         <ul>{markPrivateSources.map((source) => <li key={source.url}><SourceLink href={source.url}>{source.label}</SourceLink></li>)}</ul>
       </section>
 
       <footer className={styles.footer}>
-        <p><b>Independent work by RN Studio.</b> This private demonstration is not affiliated with Mark H. Young, True Real Estate Hawaiʻi, LinkedIn, or any source organization.</p>
-        <p>Proposed copy remains proposed until subject review. Corrections or removal: <Link href="/for-mark/corrections">private-response instructions</Link>.</p>
+        <p><b>Prepared independently by RN Studio.</b> Mark H. Young and True Real Estate Hawaiʻi did not commission or approve this private draft. It is not affiliated with LinkedIn or the publishers cited above.</p>
+        <p>Everything proposed here remains a draft. For a correction or removal request, see the <Link href="/for-mark/corrections">private reply instructions</Link>.</p>
       </footer>
     </main>
   );

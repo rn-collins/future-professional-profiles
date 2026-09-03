@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "A professional authority system for Mark H. Young, prepared by RN Studio";
+export const alt = "A publishing plan for Mark H. Young, prepared by RN Studio";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -12,11 +12,11 @@ export default function OpenGraphImage() {
       <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", width: 900, zIndex: 1 }}>
         <div style={{ display: "flex", alignItems: "center", gap: 18, fontFamily: "Arial, sans-serif", fontSize: 22, fontWeight: 700, letterSpacing: 2, textTransform: "uppercase", color: "#0f6a55" }}>
           <span style={{ display: "flex", alignItems: "center", justifyContent: "center", width: 56, height: 56, borderRadius: 56, color: "white", background: "#102b34", fontFamily: "Georgia, serif", fontSize: 18 }}>RN</span>
-          Private strategic demonstration
+          Private working draft
         </div>
         <div style={{ display: "flex", flexDirection: "column" }}>
-          <div style={{ fontSize: 68, lineHeight: 1.02, letterSpacing: -2 }}>A professional authority system for Mark H. Young.</div>
-          <div style={{ marginTop: 30, fontFamily: "Arial, sans-serif", fontSize: 25, color: "#36535c" }}>Make the judgment beneath consequential property decisions visible.</div>
+          <div style={{ fontSize: 68, lineHeight: 1.02, letterSpacing: -2 }}>A publishing plan for Mark H. Young.</div>
+          <div style={{ marginTop: 30, fontFamily: "Arial, sans-serif", fontSize: 25, color: "#36535c" }}>Show people how you read a property.</div>
         </div>
         <div style={{ fontFamily: "Arial, sans-serif", fontSize: 18, fontWeight: 700, letterSpacing: 3, textTransform: "uppercase" }}>Prepared by RN Studio</div>
       </div>

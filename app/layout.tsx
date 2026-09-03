@@ -57,7 +57,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     url: siteUrl,
     creator: { "@type": "Organization", name: "RN Studio" },
     description:
-      "An evidence-led editorial and professional-presence strategy demonstration.",
+      "Profile and publishing concepts prepared by RN Studio from public sources.",
     about: ["content strategy", "professional presence", "brand strategy"],
   };
 

@@ -8,7 +8,8 @@
     "start": "next start",
     "typecheck": "tsc --noEmit",
     "test:smoke": "node scripts/smoke.mjs",
-    "test:mark-private": "node scripts/mark-isolation-test.mjs"
+    "test:mark-private": "node scripts/mark-isolation-test.mjs",
+    "test:mark-style": "node scripts/mark-ai-style-test.mjs"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",
