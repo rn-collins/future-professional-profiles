@@ -25,6 +25,11 @@ export const metadata: Metadata = {
   authors: [{ name: "RN Studio" }],
   creator: "RN Studio",
   publisher: "RN Studio",
+  icons: {
+    icon: [{ url: "/icon.svg", type: "image/svg+xml" }, { url: "/icons/rn-profile-192.png", sizes: "192x192", type: "image/png" }],
+    apple: [{ url: "/icons/rn-profile-192.png", sizes: "192x192", type: "image/png" }],
+  },
+  manifest: "/manifest.webmanifest",
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
@@ -33,12 +38,14 @@ export const metadata: Metadata = {
     description:
       "Two evidence-led demonstrations of what strategic professional presence can become.",
     siteName: "RN Studio",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Future Professional Profiles by RN Studio" }],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "Future Professional Profiles — RN Studio",
     description:
       "Evidence-led professional presence and content strategy concepts.",
+    images: ["/opengraph-image"],
   },
   category: "business",
 };

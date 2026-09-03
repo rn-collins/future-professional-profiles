@@ -3,9 +3,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { track } from "@vercel/analytics";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { profiles, type Profile } from "./data";
 import EditorialOperatingSystem from "./components/EditorialOperatingSystem";
+import ConceptBoundary from "./components/ConceptBoundary";
 
 type ProfileKey = "mark" | "sam";
 type Lens = "overview" | "client" | "investor" | "community";
@@ -15,8 +16,8 @@ const lensCopy: Record<
 > = {
   overview: {
     label: "Full profile",
-    eyebrow: "Complete narrative",
-    description: "See the complete, source-governed professional story.",
+    eyebrow: "Research-backed narrative",
+    description: "See the source-governed professional story developed from the retrieved public record.",
   },
   client: {
     label: "Potential client",
@@ -212,6 +213,21 @@ function Activity({
 }) {
   const [view, setView] = useState<"posts" | "evidence">("posts");
   const [status, setStatus] = useState("");
+  const tabRefs = useRef<Array<HTMLButtonElement | null>>([]);
+  const selectView = (next: "posts" | "evidence") => {
+    setView(next);
+    track("activity_view_changed", { profile: p.slug, view: next });
+  };
+  const handleTabKey = (event: React.KeyboardEvent<HTMLButtonElement>, index: number) => {
+    const keys = ["ArrowLeft", "ArrowRight", "Home", "End"];
+    if (!keys.includes(event.key)) return;
+    event.preventDefault();
+    const last = tabRefs.current.length - 1;
+    const nextIndex = event.key === "Home" ? 0 : event.key === "End" ? last : event.key === "ArrowRight" ? (index + 1) % (last + 1) : (index - 1 + last + 1) % (last + 1);
+    const next = nextIndex === 0 ? "posts" : "evidence";
+    selectView(next);
+    tabRefs.current[nextIndex]?.focus();
+  };
   const copyLink = async (id: string) => {
     const url = `${location.origin}${location.pathname}?profile=${p.slug}#${id}`;
     try {
@@ -236,24 +252,29 @@ function Activity({
       </div>
       <div className="tabs" role="tablist" aria-label="Activity view">
         <button
+          id={`activity-posts-tab-${p.slug}`}
+          ref={(node) => { tabRefs.current[0] = node; }}
           role="tab"
           aria-selected={view === "posts"}
+          aria-controls={`activity-posts-panel-${p.slug}`}
+          tabIndex={view === "posts" ? 0 : -1}
+          onKeyDown={(event) => handleTabKey(event, 0)}
           onClick={() => {
-            setView("posts");
-            track("activity_view_changed", { profile: p.slug, view: "posts" });
+            selectView("posts");
           }}
         >
           Concept posts
         </button>
         <button
+          id={`activity-evidence-tab-${p.slug}`}
+          ref={(node) => { tabRefs.current[1] = node; }}
           role="tab"
           aria-selected={view === "evidence"}
+          aria-controls={`activity-evidence-panel-${p.slug}`}
+          tabIndex={view === "evidence" ? 0 : -1}
+          onKeyDown={(event) => handleTabKey(event, 1)}
           onClick={() => {
-            setView("evidence");
-            track("activity_view_changed", {
-              profile: p.slug,
-              view: "evidence",
-            });
+            selectView("evidence");
           }}
         >
           Evidence map
@@ -263,7 +284,8 @@ function Activity({
         {status}
       </p>
       {view === "posts" ? (
-        p.posts.map((post, i) => {
+        <div role="tabpanel" id={`activity-posts-panel-${p.slug}`} aria-labelledby={`activity-posts-tab-${p.slug}`} tabIndex={0}>
+        {p.posts.map((post, i) => {
           const id = `${p.slug}-post-${i + 1}`;
           const isSaved = saved.includes(id);
           return (
@@ -345,9 +367,10 @@ function Activity({
               </div>
             </article>
           );
-        })
+        })}
+        </div>
       ) : (
-        <div className="evidenceMap">
+        <div className="evidenceMap" role="tabpanel" id={`activity-evidence-panel-${p.slug}`} aria-labelledby={`activity-evidence-tab-${p.slug}`} tabIndex={0}>
           {p.sources.map((source, i) => (
             <a
               key={source.url}
@@ -455,11 +478,50 @@ function StrategyPanel({
   open: boolean;
   close: () => void;
 }) {
+  const dialogRef = useRef<HTMLElement>(null);
   useEffect(() => {
     if (!open) return;
-    const onKey = (e: KeyboardEvent) => e.key === "Escape" && close();
-    addEventListener("keydown", onKey);
-    return () => removeEventListener("keydown", onKey);
+    const previousFocus = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+    const background = Array.from(document.querySelectorAll<HTMLElement>("body > header, body > .controlDeck, body > main, body > footer"));
+    const previousHidden = background.map((element) => element.getAttribute("aria-hidden"));
+    background.forEach((element) => {
+      element.inert = true;
+      element.setAttribute("aria-hidden", "true");
+    });
+    const dialog = dialogRef.current;
+    const focusable = () => Array.from(dialog?.querySelectorAll<HTMLElement>('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])') ?? []).filter((element) => !element.hasAttribute("hidden"));
+    const frame = requestAnimationFrame(() => focusable()[0]?.focus());
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        event.preventDefault();
+        close();
+        return;
+      }
+      if (event.key !== "Tab") return;
+      const items = focusable();
+      if (!items.length) return;
+      const first = items[0];
+      const last = items[items.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    };
+    document.addEventListener("keydown", onKey);
+    return () => {
+      cancelAnimationFrame(frame);
+      document.removeEventListener("keydown", onKey);
+      background.forEach((element, index) => {
+        element.inert = false;
+        const oldValue = previousHidden[index];
+        if (oldValue === null) element.removeAttribute("aria-hidden");
+        else element.setAttribute("aria-hidden", oldValue);
+      });
+      previousFocus?.focus();
+    };
   }, [open, close]);
   if (!open) return null;
   const layerId: Record<ProfileKey, Record<Lens, string>> = {
@@ -485,6 +547,7 @@ function StrategyPanel({
       onMouseDown={(e) => e.target === e.currentTarget && close()}
     >
       <aside
+        ref={dialogRef}
         className="strategyDrawer"
         id="strategy"
         role="dialog"
@@ -629,6 +692,7 @@ export default function Home() {
           Open strategy layer <span>↗</span>
         </button>
       </section>
+      <ConceptBoundary />
       <main>
         <div className="mainColumn">
           <ProfileHero p={p} lens={lens} />
@@ -683,7 +747,8 @@ export default function Home() {
       <footer>
         <b>Editorial reconstruction by RN Studio.</b> This is a speculative
         professional-presence prototype—not an actual LinkedIn profile,
-        published activity, endorsement, or representation of employment.
+        published activity, endorsement, or representation of employment.{" "}
+        <Link href="/corrections">Corrections and takedown requests</Link>.
       </footer>
     </>
   );

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="RN Studio">
+  <rect width="512" height="512" rx="112" fill="#123b4c"/>
+  <path d="M72 398V114h103c70 0 111 36 111 94 0 39-19 68-54 84l71 106h-75l-61-94h-31v94H72Zm64-151h35c33 0 50-13 50-38 0-24-17-37-50-37h-35v75Z" fill="#fff"/>
+  <path d="M291 398V114h59l96 169V114h62v284h-56l-99-174v174h-62Z" fill="#e6c86c"/>
+</svg>

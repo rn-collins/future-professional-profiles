@@ -20,5 +20,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.8,
     },
+    {
+      url: "https://future-professional-profiles.vercel.app/corrections",
+      lastModified: new Date("2026-09-03T00:00:00.000Z"),
+      changeFrequency: "monthly",
+      priority: 0.5,
+    },
   ];
 }

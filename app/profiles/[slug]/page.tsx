@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import ProfileTools from "../../components/ProfileTools";
 import EditorialOperatingSystem from "../../components/EditorialOperatingSystem";
+import ConceptBoundary from "../../components/ConceptBoundary";
 import { profiles, type Profile } from "../../data";
 
 type ProfileSlug = keyof typeof profiles;
@@ -16,13 +17,14 @@ function buildMarkdown(profile: Profile) {
   const sections = [
     `# ${profile.name}`,
     profile.headline,
+    `> SPECULATIVE CONCEPT: RN Studio drafted the first-person passages below as proposed copy. They were not published or approved by ${profile.name}, and do not imply hiring, commissioning, affiliation, or endorsement.`,
     `## Editorial position\n${profile.editorialPosition.thesis}\n\n${profile.editorialPosition.distinction}\n\n${profile.editorialPosition.promise}`,
     `## About\n${profile.about.join("\n\n")}`,
     `## Experience\n${profile.experience.map((item) => `### ${item.role}\n${item.org} — ${item.dates}\n\n${item.detail}`).join("\n\n")}`,
     `## Audience strategy\n${profile.strategyLayers.map((layer) => `### ${layer.label}\n- Audience: ${layer.audience}\n- Tension: ${layer.tension}\n- Editorial move: ${layer.editorialMove}\n- Designed outcome: ${layer.outcome}`).join("\n\n")}`,
     `## Content engine\n${profile.contentEngine.northStar}\n\n${profile.contentEngine.cadence}\n\n${profile.contentEngine.series.map((series) => `### ${series.name}\n${series.purpose}\n\nFormats: ${series.formats.join(", ")}\n\nConversion: ${series.conversion}`).join("\n\n")}`,
     `## Public sources\n${profile.sources.map((source) => `- [${source.label}](${source.url})`).join("\n")}`,
-    "---\nEditorial reconstruction and professional-presence strategy by RN Studio. Proposed content is not evidence of publication, approval, employment, or endorsement.",
+    "---\nEditorial reconstruction and professional-presence strategy by RN Studio. Proposed content is not evidence of publication, approval, employment, or endorsement. Corrections and takedown requests: https://future-professional-profiles.vercel.app/corrections",
   ];
   return sections.join("\n\n");
 }
@@ -77,7 +79,9 @@ export default async function StandaloneProfile({
       image: `https://future-professional-profiles.vercel.app${profile.image}`,
       description: profile.headline,
       homeLocation: { "@type": "Place", name: profile.location },
-      affiliation: { "@type": "Organization", name: profile.company },
+      ...(profile.slug === "mark"
+        ? { affiliation: { "@type": "Organization", name: profile.company } }
+        : {}),
       alumniOf: profile.education.map((item) => ({ "@type": "EducationalOrganization", name: item.school })),
       subjectOf: profile.sources.map((source) => ({ "@type": "CreativeWork", name: source.label, url: source.url })),
     },
@@ -92,6 +96,7 @@ export default async function StandaloneProfile({
         <Link href={`/?profile=${profile.slug}`}>← Interactive profile</Link>
         <span><Link href="/intelligence">Search intelligence</Link> · RN Studio</span>
       </nav>
+      <ConceptBoundary />
       <header className="briefHero">
         <div className="briefPortrait">
           <Image
@@ -119,7 +124,7 @@ export default async function StandaloneProfile({
       </section>
 
       <section className="briefSection">
-        <p className="sectionLabel">Complete narrative</p>
+        <p className="sectionLabel">Research-backed editorial narrative</p>
         <h2>About</h2>
         {profile.about.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
       </section>
@@ -182,6 +187,7 @@ export default async function StandaloneProfile({
           ))}
         </ol>
         <p className="briefBoundary">The sources support the underlying public record. Proposed posts, series, positioning, and outcomes remain editorial strategy—not claims that either subject commissioned, approved, published, or achieved them.</p>
+        <p><Link href="/corrections">Request a factual correction, source update, image review, or takedown →</Link></p>
       </section>
       <EditorialOperatingSystem profile={profile} />
     </main>

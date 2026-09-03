@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import { track } from "@vercel/analytics";
 import type { Profile } from "../data";
 
@@ -10,6 +10,8 @@ export default function EditorialOperatingSystem({ profile }: { profile: Profile
   const [view, setView] = useState<View>("voice");
   const [recipeId, setRecipeId] = useState(profile.editorialSystem.draftRecipes[0]?.id ?? "");
   const [copied, setCopied] = useState(false);
+  const tabRefs = useRef<Array<HTMLButtonElement | null>>([]);
+  const views: View[] = ["voice", "plan", "studio", "governance"];
   const recipe = useMemo(
     () => profile.editorialSystem.draftRecipes.find((item) => item.id === recipeId) ?? profile.editorialSystem.draftRecipes[0],
     [profile, recipeId],
@@ -35,6 +37,14 @@ export default function EditorialOperatingSystem({ profile }: { profile: Profile
     setView(next);
     track("editorial_system_viewed", { profile: profile.slug, view: next });
   };
+  const handleTabKey = (event: React.KeyboardEvent<HTMLButtonElement>, index: number) => {
+    if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key)) return;
+    event.preventDefault();
+    const last = views.length - 1;
+    const nextIndex = event.key === "Home" ? 0 : event.key === "End" ? last : event.key === "ArrowRight" ? (index + 1) % views.length : (index - 1 + views.length) % views.length;
+    changeView(views[nextIndex]);
+    tabRefs.current[nextIndex]?.focus();
+  };
 
   const copyBrief = async () => {
     try {
@@ -58,15 +68,25 @@ export default function EditorialOperatingSystem({ profile }: { profile: Profile
       </div>
 
       <div className="osTabs" role="tablist" aria-label="Editorial operating system views">
-        {(["voice", "plan", "studio", "governance"] as View[]).map((item) => (
-          <button key={item} role="tab" aria-selected={view === item} onClick={() => changeView(item)}>
+        {views.map((item, index) => (
+          <button
+            key={item}
+            id={`editorial-${profile.slug}-${item}-tab`}
+            ref={(node) => { tabRefs.current[index] = node; }}
+            role="tab"
+            aria-selected={view === item}
+            aria-controls={`editorial-${profile.slug}-${item}-panel`}
+            tabIndex={view === item ? 0 : -1}
+            onKeyDown={(event) => handleTabKey(event, index)}
+            onClick={() => changeView(item)}
+          >
             {item === "voice" ? "Voice system" : item === "plan" ? "90-day plan" : item === "studio" ? "Commissioning studio" : "Evidence gates"}
           </button>
         ))}
       </div>
 
       {view === "voice" && (
-        <div className="osPanel osColumns">
+        <div className="osPanel osColumns" role="tabpanel" id={`editorial-${profile.slug}-voice-panel`} aria-labelledby={`editorial-${profile.slug}-voice-tab`} tabIndex={0}>
           <div>
             <h3>Sound like</h3>
             <div className="osChips">{profile.editorialSystem.voice.qualities.map((item) => <span key={item}>{item}</span>)}</div>
@@ -82,7 +102,7 @@ export default function EditorialOperatingSystem({ profile }: { profile: Profile
       )}
 
       {view === "plan" && (
-        <div className="osPanel osTimeline">
+        <div className="osPanel osTimeline" role="tabpanel" id={`editorial-${profile.slug}-plan-panel`} aria-labelledby={`editorial-${profile.slug}-plan-tab`} tabIndex={0}>
           {profile.editorialSystem.ninetyDayPlan.map((phase, index) => (
             <article key={phase.phase}>
               <span>0{index + 1}</span><div><h3>{phase.phase}</h3><p>{phase.objective}</p>
@@ -94,7 +114,7 @@ export default function EditorialOperatingSystem({ profile }: { profile: Profile
       )}
 
       {view === "studio" && recipe && (
-        <div className="osPanel osStudio">
+        <div className="osPanel osStudio" role="tabpanel" id={`editorial-${profile.slug}-studio-panel`} aria-labelledby={`editorial-${profile.slug}-studio-tab`} tabIndex={0}>
           <div>
             <label htmlFor={`recipe-${profile.slug}`}>Choose a source-governed assignment</label>
             <select id={`recipe-${profile.slug}`} value={recipe.id} onChange={(event) => { setRecipeId(event.target.value); setCopied(false); }}>
@@ -117,7 +137,7 @@ export default function EditorialOperatingSystem({ profile }: { profile: Profile
       )}
 
       {view === "governance" && (
-        <div className="osPanel osGates">
+        <div className="osPanel osGates" role="tabpanel" id={`editorial-${profile.slug}-governance-panel`} aria-labelledby={`editorial-${profile.slug}-governance-tab`} tabIndex={0}>
           <div className="allow"><h3>Ready to use with attribution</h3><ul>{profile.editorialSystem.evidencePolicy.allowed.map((item) => <li key={item}>{item}</li>)}</ul></div>
           <div className="review"><h3>Requires human review</h3><ul>{profile.editorialSystem.evidencePolicy.reviewRequired.map((item) => <li key={item}>{item}</li>)}</ul></div>
           <div className="stop"><h3>Never manufacture</h3><ul>{profile.editorialSystem.evidencePolicy.prohibited.map((item) => <li key={item}>{item}</li>)}</ul></div>
