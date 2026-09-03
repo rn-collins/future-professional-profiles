@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import ProfileTools from "../../components/ProfileTools";
+import EditorialOperatingSystem from "../../components/EditorialOperatingSystem";
 import { profiles, type Profile } from "../../data";
 
 type ProfileSlug = keyof typeof profiles;
@@ -64,12 +65,32 @@ export default async function StandaloneProfile({
   if (!isProfileSlug(slug)) notFound();
   const profile = profiles[slug];
   const markdown = buildMarkdown(profile);
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    name: `${profile.name} — Evidence-Led Professional Profile`,
+    url: `https://future-professional-profiles.vercel.app/profiles/${slug}`,
+    dateModified: "2026-09-03",
+    mainEntity: {
+      "@type": "Person",
+      name: profile.name,
+      image: `https://future-professional-profiles.vercel.app${profile.image}`,
+      description: profile.headline,
+      homeLocation: { "@type": "Place", name: profile.location },
+      affiliation: { "@type": "Organization", name: profile.company },
+      alumniOf: profile.education.map((item) => ({ "@type": "EducationalOrganization", name: item.school })),
+      subjectOf: profile.sources.map((source) => ({ "@type": "CreativeWork", name: source.label, url: source.url })),
+    },
+    isBasedOn: profile.sources.map((source) => source.url),
+    author: { "@type": "Organization", name: "RN Studio" },
+  };
 
   return (
     <main className={`standalone standalone-${profile.slug}`}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, "\\u003c") }} />
       <nav className="briefNav" aria-label="Standalone profile navigation">
         <Link href={`/?profile=${profile.slug}`}>← Interactive profile</Link>
-        <span>RN Studio · Evidence-led reconstruction</span>
+        <span><Link href="/intelligence">Search intelligence</Link> · RN Studio</span>
       </nav>
       <header className="briefHero">
         <div className="briefPortrait">
@@ -162,6 +183,7 @@ export default async function StandaloneProfile({
         </ol>
         <p className="briefBoundary">The sources support the underlying public record. Proposed posts, series, positioning, and outcomes remain editorial strategy—not claims that either subject commissioned, approved, published, or achieved them.</p>
       </section>
+      <EditorialOperatingSystem profile={profile} />
     </main>
   );
 }

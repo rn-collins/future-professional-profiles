@@ -1,4 +1,5 @@
 import { profiles } from "../../data";
+import { evidenceProfiles, evidenceSummary } from "../../evidence";
 
 export const dynamic = "force-static";
 
@@ -14,6 +15,8 @@ export function GET() {
       thesis: profile.editorialPosition.thesis,
       url: `/profiles/${profile.slug}`,
       sourceCount: profile.sources.length,
+      evidence: evidenceSummary(evidenceProfiles[profile.slug]),
+      evidenceUrl: `/api/evidence/${profile.slug}`,
     })),
   });
 }

@@ -27,6 +27,35 @@ export type Profile = {
     cadence: string;
     series: { name: string; purpose: string; formats: string[]; conversion: string }[];
   };
+  editorialSystem: {
+    voice: {
+      qualities: string[];
+      sentenceRule: string;
+      openingRule: string;
+      proofRule: string;
+      avoid: string[];
+    };
+    evidencePolicy: {
+      allowed: string[];
+      reviewRequired: string[];
+      prohibited: string[];
+    };
+    ninetyDayPlan: {
+      phase: string;
+      objective: string;
+      weeklyMoves: string[];
+      decisionGate: string;
+    }[];
+    draftRecipes: {
+      id: string;
+      label: string;
+      audience: string;
+      format: string;
+      prompt: string;
+      requiredEvidence: string;
+      callToAction: string;
+    }[];
+  };
   featured: { kicker: string; title: string; description: string; tone: string; status?: "Proposed series"; evidence?: string[] }[];
   posts: {
     date: string;
@@ -72,6 +101,30 @@ export const profiles: Record<"mark" | "sam", Profile> = {
         { name: "What the Listing Doesn’t Tell You", purpose: "Expose hidden diligence questions without sensationalizing risk.", formats: ["annotated carousel", "60-second field video", "search-led article"], conversion: "Property-specific diligence conversation" },
         { name: "Decision Before Transaction", purpose: "Help households sequence the choices surrounding a move before focusing on inventory.", formats: ["decision tree", "client scenario", "newsletter note"], conversion: "Buyer or seller strategy session" },
         { name: "Oʻahu, Without the Theater", purpose: "Interpret market information by segment, place, and decision—not headline alone.", formats: ["monthly briefing", "chart-led post", "referral memo"], conversion: "Newsletter subscription and referral-partner reply" }
+      ]
+    },
+    editorialSystem: {
+      voice: {
+        qualities: ["Measured", "Locally fluent", "Specific", "Protective of the client", "Confident without performance"],
+        sentenceRule: "Lead with the decision or hidden consequence; earn every flourish with a concrete property fact.",
+        openingRule: "Open on a tension a buyer, seller, or owner recognizes—not a résumé claim or generic market statistic.",
+        proofRule: "Use first-party records for biography, named market sources for conditions, and label transaction patterns as anonymized or composite.",
+        avoid: ["Luxury superlatives", "Inventory spectacle without interpretation", "Unqualified production totals", "Manufactured urgency", "Claims to know what a client felt"]
+      },
+      evidencePolicy: {
+        allowed: ["Verified career facts", "Dated market reports", "Public property and permitting records", "Clearly labeled professional analysis", "Anonymized patterns that cannot identify a client"],
+        reviewRequired: ["Any client or transaction story", "Production or ranking claim", "Property imagery not controlled by the brokerage", "Prediction stated more strongly than the underlying data"],
+        prohibited: ["Invented testimonial language", "Private client details", "Fabricated engagement or outcomes", "Implied endorsement", "A concept presented as previously published"]
+      },
+      ninetyDayPlan: [
+        { phase: "Days 1–30 · Establish the method", objective: "Make appraisal-trained judgment recognizable before asking the audience to convert.", weeklyMoves: ["Publish the positioning manifesto", "Launch What the Listing Doesn’t Tell You", "Explain one buyer/seller sequencing problem", "Issue a source-visible Oʻahu decision brief"], decisionGate: "Continue only the formats that produce substantive saves, replies, evidence opens, or qualified questions." },
+        { phase: "Days 31–60 · Demonstrate range", objective: "Show how the same decision discipline travels across household, seller, and investor situations.", weeklyMoves: ["Release one anonymized or composite deal anatomy", "Build a renovation-versus-list decision tree", "Interpret a neighborhood-level market shift", "Publish a referral-trigger memo"], decisionGate: "Confirm that range strengthens—not blurs—the appraisal-led position." },
+        { phase: "Days 61–90 · Convert earned attention", objective: "Turn repeated audience questions into durable search pages and clearly scoped conversations.", weeklyMoves: ["Answer the highest-frequency audience question", "Publish a downloadable diligence checklist", "Release a quarterly transaction-anatomy essay", "Invite one specific strategy conversation"], decisionGate: "Attribute inquiries to the originating question, series, and audience—not vanity reach." }
+      ],
+      draftRecipes: [
+        { id: "mark-hidden-fact", label: "Hidden property fact", audience: "Prospective buyers and investors", format: "Evidence-led post", prompt: "Identify one attractive surface feature, then reveal the less visible diligence fact that can change value, cost, or fit.", requiredEvidence: "A property record, inspection category, insurance source, or named market document; never a fabricated listing.", callToAction: "Invite the reader to name the question they would investigate before an offer." },
+        { id: "mark-sequence", label: "Move sequencing memo", audience: "Move-up families", format: "Decision-tree carousel", prompt: "Start with the household constraint, map the sell/buy sequence, and explain where timing or contingencies change leverage.", requiredEvidence: "Public process facts plus a hypothetical scenario visibly labeled composite.", callToAction: "Offer a strategy session focused on sequence rather than inventory." },
+        { id: "mark-market", label: "Oʻahu decision brief", audience: "Owners and referral partners", format: "Monthly briefing", prompt: "Select one dated market change, separate segments, and explain which decision it could alter—and which it does not answer.", requiredEvidence: "A dated Honolulu Board of REALTORS® or equivalent primary market report.", callToAction: "Ask readers which segment or decision deserves the next brief." }
       ]
     },
     about: [
@@ -137,6 +190,30 @@ export const profiles: Record<"mark" | "sam", Profile> = {
         { name: "The Place Belongs in the Model", purpose: "Show how infrastructure, policy, and community conditions become asset fundamentals.", formats: ["system map", "field note", "evidence-linked essay"], conversion: "Investment or cross-sector advisory conversation" },
         { name: "Public Meeting, Private Consequence", purpose: "Translate civic records into concrete implications without assigning a board position to one member.", formats: ["source annotation", "90-second explainer", "monthly briefing"], conversion: "Subscription and stakeholder dialogue" },
         { name: "Change the Asset, Change the Questions", purpose: "Prepare residential investors for commercial-property diligence and risk.", formats: ["framework carousel", "scenario memo", "live Q&A"], conversion: "Commercial-transition assessment" }
+      ]
+    },
+    editorialSystem: {
+      voice: {
+        qualities: ["Systems-literate", "Plainspoken", "Curious", "Civically serious", "Comfortable with unresolved tradeoffs"],
+        sentenceRule: "Move from public fact to affected system to private consequence; name uncertainty before interpretation.",
+        openingRule: "Begin with the overlooked dependency, pathway, or tradeoff—not a claim to expertise.",
+        proofRule: "Attach the primary record; distinguish board action, Sam’s documented words, reported fact, and RN’s strategic interpretation.",
+        avoid: ["Speaking for an entire board", "Implying scientific credentials", "Treating Hawaiʻi as a generic market", "False certainty", "Presenting an indexed role as first-party confirmed"]
+      },
+      evidencePolicy: {
+        allowed: ["Official minutes and testimony", "Directly attributed reporting", "Verified education and prior roles", "Clearly labeled systems analysis", "Hypothetical investment examples marked as such"],
+        reviewRequired: ["Any statement in Sam’s first-person voice", "Current employer or client work", "Scientific or environmental conclusion", "Family imagery", "A board matter without member-specific attribution"],
+        prohibited: ["A board position attributed to Sam without proof", "Invented investment outcomes", "Implied scientific authority", "Private family information", "Concept posts represented as historical publications"]
+      },
+      ninetyDayPlan: [
+        { phase: "Days 1–30 · Reveal the throughline", objective: "Make systems translation legible across energy, property, and civic work.", weeklyMoves: ["Publish The Place Belongs in the Model", "Annotate one public record", "Explain one residential-to-commercial question", "Map energy, infrastructure, and property value"], decisionGate: "Confirm that the audience understands the cross-sector thesis without assuming an unverified current employer." },
+        { phase: "Days 31–60 · Prove the method", objective: "Demonstrate how primary records change a private property or investment decision.", weeklyMoves: ["Trace one infrastructure pathway", "Compare two commercial-risk scenarios", "Translate one meeting item into owner consequences", "Interview a credentialed specialist rather than borrowing expertise"], decisionGate: "Audit every public-policy piece for attribution, affected parties, countervailing interests, and uncertainty." },
+        { phase: "Days 61–90 · Build a useful public desk", objective: "Convert recurring explanations into a searchable, source-visible Hawaiʻi systems briefing.", weeklyMoves: ["Publish a monthly systems brief", "Release a commercial-transition diagnostic", "Create a primary-source reading guide", "Invite a tightly scoped advisory or stakeholder conversation"], decisionGate: "Optimize for informed replies, evidence opens, and qualified conversations—not ideological agreement." }
+      ],
+      draftRecipes: [
+        { id: "sam-public-private", label: "Public meeting, private consequence", audience: "Owners and civic stakeholders", format: "Source annotation", prompt: "Extract one documented public decision, explain the affected system, and map the distinct consequences for residents, owners, and implementation.", requiredEvidence: "Official agenda, minutes, testimony, or directly attributed reporting; attribute each position precisely.", callToAction: "Invite corrections and ask which implementation consequence remains unclear." },
+        { id: "sam-transition", label: "Change the asset, change the questions", audience: "Residential investors", format: "Framework carousel", prompt: "Take one familiar residential assumption and show how leases, tenants, debt, capex, or operations change it in commercial property.", requiredEvidence: "A named public market or regulatory source plus a clearly labeled hypothetical example.", callToAction: "Offer a diagnostic conversation about changed questions, not a promised investment outcome." },
+        { id: "sam-pathway", label: "Follow the pathway", audience: "Property, infrastructure, and energy professionals", format: "Systems map", prompt: "Start with one physical or regulatory input and follow its path through cost, access, resilience, feasibility, and community consequence.", requiredEvidence: "Primary public record and, for technical conclusions, a credentialed expert or authoritative technical source.", callToAction: "Ask what dependency or affected group the map still omits." }
       ]
     },
     about: [

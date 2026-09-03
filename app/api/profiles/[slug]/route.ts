@@ -1,4 +1,5 @@
 import { profiles } from "../../../data";
+import { evidenceProfiles, evidenceSummary } from "../../../evidence";
 
 export const dynamic = "force-static";
 
@@ -15,8 +16,11 @@ export async function GET(
     return Response.json({ error: "Profile not found" }, { status: 404 });
   }
   const profile = profiles[slug as keyof typeof profiles];
+  const evidence = evidenceProfiles[slug as keyof typeof evidenceProfiles];
   return Response.json({
     ...profile,
+    evidence: evidenceSummary(evidence),
+    evidenceUrl: `/api/evidence/${slug}`,
     editorialBoundary:
       "Factual biography is source-governed. Posts, series, positioning, and outcomes are proposed editorial strategy.",
   });

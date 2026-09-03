@@ -5,6 +5,7 @@ import Link from "next/link";
 import { track } from "@vercel/analytics";
 import { useEffect, useMemo, useState } from "react";
 import { profiles, type Profile } from "./data";
+import EditorialOperatingSystem from "./components/EditorialOperatingSystem";
 
 type ProfileKey = "mark" | "sam";
 type Lens = "overview" | "client" | "investor" | "community";
@@ -68,6 +69,7 @@ function Header({ openStrategy }: { openStrategy: () => void }) {
           <a href="#featured">Featured</a>
           <a href="#activity">Ideas</a>
           <a href="#experience">Experience</a>
+          <Link href="/intelligence">Intelligence</Link>
           <button onClick={openStrategy}>Strategy</button>
         </nav>
       </div>
@@ -636,6 +638,7 @@ export default function Home() {
           <Experience p={p} />
           <Skills p={p} />
           <Research p={p} />
+          <EditorialOperatingSystem profile={p} />
         </div>
         <aside className="contextRail">
           <section className="card asideCard">
