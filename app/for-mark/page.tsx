@@ -83,7 +83,7 @@ export default function ForMarkPage() {
         <nav aria-label="Presentation sections">
           <a href="#opportunity">Idea</a>
           <a href="#demonstration">Example</a>
-          <a href="#pilot">Pilot</a>
+          <a href="#pilot">Engagement</a>
         </nav>
         <PrintButton />
       </header>
@@ -95,7 +95,7 @@ export default function ForMarkPage() {
           <p className={styles.lede}>Mark, your finance and appraisal background changes how you read a property. This page shows how that experience could become useful public work before someone calls you.</p>
           <div className={styles.actions}>
             <a className={styles.primary} href="#opportunity">See the opportunity</a>
-            <a className={styles.secondary} href="#pilot">Review the pilot</a>
+            <a className={styles.secondary} href="#pilot">See the engagement</a>
           </div>
           <p className={styles.boundary}><b>Before you read:</b> You did not ask for this, and you have not reviewed or approved it. Every recommendation is still a draft.</p>
         </div>
@@ -201,22 +201,28 @@ export default function ForMarkPage() {
         </aside>
         <div className={styles.pilotGrid}>
           <div>
-            <p className={styles.eyebrow}>04 · A practical first project</p>
-            <h2 id="pilot-title">Start with one useful series and test it for 90 days.</h2>
-            <p>We would choose the audience and subject together. RN Studio would then produce the first body of work and set up a review process that respects your schedule.</p>
+            <p className={styles.eyebrow}>04 · A practical first engagement</p>
+            <h2 id="pilot-title">Work through the plan one piece at a time.</h2>
+            <p>We would choose the first audience and subject together, complete that piece, and then move to the next priority. The first 90 days would give us enough work to review what is useful and what should change.</p>
           </div>
           <div className={styles.deliverables}>
-            <h3>Proposed pilot</h3>
+            <div className={styles.priceBlock}>
+              <span>Monthly subscription</span>
+              <div><strong>$5,000</strong><small>per month</small></div>
+              <p>We can work through the complete publishing plan over time. One primary deliverable is in production at a time, from research through your approval. When it is approved or published, the next piece begins.</p>
+            </div>
+            <h3>What the subscription includes</h3>
             <ul>
-              <li>A clear point of view and audience</li>
+              <li>Research, interviews, strategy, writing, and design</li>
               <li>A biography with a source for every fact</li>
               <li>Three recurring editorial series</li>
-              <li>Ninety-day content plan</li>
-              <li>One substantial article adapted for other channels</li>
-              <li>Writing and approval rules</li>
-              <li>A review at the end of the pilot</li>
+              <li>A rolling 90-day content plan</li>
+              <li>Preparation for the agreed publishing channels</li>
+              <li>Reasonable revisions to the active piece</li>
+              <li>Smaller adaptations made from the active piece</li>
+              <li>A review after the first 90 days</li>
             </ul>
-            <p>We would agree on the exact work, publishing schedule, channels, and fee before the pilot begins. This draft makes no promise about leads, revenue, or return on investment.</p>
+            <p>Each month is paid before work begins. The subscription continues month to month and may be paused or canceled before the next billing period. Paid media, commissioned photography, travel, and outside production costs are separate. The amount completed will depend on the work chosen and review time. This draft makes no promise about leads, revenue, or return on investment.</p>
           </div>
         </div>
 
@@ -226,21 +232,21 @@ export default function ForMarkPage() {
           <details><summary>“How much of my time would this take?”</summary><p>We would agree on a manageable interview and review schedule before starting. A typical cycle would include one focused conversation and one consolidated review, but the schedule would follow the work we choose.</p></details>
           <details><summary>“How would it sound like me?”</summary><p>The current example is RN Studio’s writing. An engagement would begin by recording how you explain decisions, which words you use, and what you would never say. Nothing written in your voice would be published until you approve it.</p></details>
           <details><summary>“What about my clients?”</summary><p>We would use client or transaction details only with appropriate permission. Otherwise, the detail would be removed. Any teaching example assembled from more than one situation would be labeled as an illustration.</p></details>
-          <details><summary>“How would we judge the pilot?”</summary><p>Before publishing, we would agree on what counts: relevant replies, useful introductions, qualified questions, or new conversations. Audience size would provide context but would not decide the result by itself.</p></details>
+          <details><summary>“How would we judge the first 90 days?”</summary><p>Before publishing, we would agree on what counts: relevant replies, useful introductions, qualified questions, or new conversations. Audience size would provide context but would not decide the result by itself.</p></details>
         </div>
       </section>
 
       <section className={styles.finalCta} aria-labelledby="cta-title">
         <p className={styles.eyebrow}>The invitation</p>
         <h2 id="cta-title">Worth a conversation?</h2>
-        <p>I would spend 30 minutes learning which part of the business matters most to you right now. From there, we could decide whether one publishing series is worth testing.</p>
+        <p>I would spend 30 minutes learning which part of the business matters most to you right now. From there, we could choose the first piece and decide whether the monthly subscription makes sense.</p>
         <div className={styles.actions}><a className={styles.primary} href="#conversation-brief">See the conversation brief</a><a className={styles.secondary} href="#sources">Review the evidence</a></div>
       </section>
 
       <section className={styles.brief} id="conversation-brief" aria-labelledby="brief-title">
         <p className={styles.eyebrow}>What I would want to learn from you</p>
         <h2 id="brief-title">The first call would answer these questions.</h2>
-        <ol><li>Which kind of client or business opportunity matters most right now?</li><li>Which parts of your experience are you comfortable discussing publicly?</li><li>What would make a 90-day test worthwhile to you?</li></ol>
+        <ol><li>Which kind of client or business opportunity matters most right now?</li><li>Which parts of your experience are you comfortable discussing publicly?</li><li>What would make the first 90 days worthwhile to you?</li></ol>
         <p className={styles.reply}>If I sent you this link, reply to my message and we can find a time.</p>
       </section>
 
