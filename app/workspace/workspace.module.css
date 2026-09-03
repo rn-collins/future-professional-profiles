@@ -4,4 +4,4 @@
 .storageWarning{padding:12px 14px;border-left:4px solid #9b6100;background:#fff3cf;color:#4b350e;font-weight:750;line-height:1.45}
 @media(prefers-reduced-motion:reduce){.shell{scroll-behavior:auto}}
 @media print{.shell{max-width:none;padding:0}.productNav,.headerActions,.draftRail,.editorTop button,.reviewGrid button,.history button,.statusMessage{display:none}.header{padding:20px 0}.workspace{display:block}.editor{border:0;padding:0}.copyArea{min-height:0!important}.reviewGrid,.history{grid-template-columns:1fr 1fr}.reviewGrid>section,.history>section{break-inside:avoid}}
-.workspace>*{min-width:0}.editorTop{flex-wrap:wrap}.editorTop label{min-width:0}.reviewGrid>*{min-width:0}
+.workspace>*{min-width:0}.editorTop{flex-wrap:wrap}.editorTop label{min-width:0}.reviewGrid>*{min-width:0}.shell{display:block}
