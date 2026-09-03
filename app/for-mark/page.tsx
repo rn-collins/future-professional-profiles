@@ -195,34 +195,69 @@ export default function ForMarkPage() {
 
       <section className={styles.section} id="pilot" aria-labelledby="pilot-title">
         <aside className={styles.demonstrated} aria-labelledby="demonstrated-title">
-          <p className={styles.eyebrow}>What I made for you</p>
-          <h2 id="demonstrated-title">I wanted to show the work instead of describing it.</h2>
+          <p className={styles.eyebrow}>What I bring to the work</p>
+          <h2 id="demonstrated-title">I find the story before I produce the content.</h2>
           <p>I researched your public record, checked the claims, found the clearest opening, developed the series, wrote an example, and built the page you are reading. Now you can judge the work itself.</p>
+          <div className={styles.advantageGrid}>
+            <article>
+              <h3>Deep research</h3>
+              <p>I study your work, market, audience, competitors, search behavior, and source record until the useful pattern is clear.</p>
+            </article>
+            <article>
+              <h3>Original opportunities</h3>
+              <p>I turn overlooked experience into series, tools, partnerships, client education, and new ways to earn attention.</p>
+            </article>
+            <article>
+              <h3>On-brand writing</h3>
+              <p>I learn how you explain decisions, then write and edit for your voice, standards, audience, and channel.</p>
+            </article>
+            <article>
+              <h3>Business purpose</h3>
+              <p>Each piece should help the right people find you, understand how you think, trust your judgment, and know when to call.</p>
+            </article>
+          </div>
+          <p className={styles.advantageClose}>Research continues throughout the engagement. It shapes what we make next and can uncover opportunities outside the original content plan.</p>
         </aside>
         <div className={styles.pilotGrid}>
           <div>
             <p className={styles.eyebrow}>04 · A practical first engagement</p>
             <h2 id="pilot-title">Work through the plan one piece at a time.</h2>
-            <p>We would choose the first audience and subject together, complete that piece, and then move to the next priority. The first 90 days would give us enough work to review what is useful and what should change.</p>
+            <p>You work directly with RN Studio across research, positioning, opportunity development, writing, design, and review. We would choose the first audience and subject together, complete that piece, and then move to the next priority.</p>
+            <p>The first 90 days would give us enough work to judge what people respond to, what helps your clients, and what should come next.</p>
           </div>
           <div className={styles.deliverables}>
             <div className={styles.priceBlock}>
               <span>Monthly subscription</span>
               <div><strong>$5,000</strong><small>per month</small></div>
-              <p>We can work through the complete publishing plan over time. One primary deliverable is in production at a time, from research through your approval. When it is approved or published, the next piece begins.</p>
+              <p>One primary deliverable moves through production at a time, from research through your approval. The limit controls work in progress; it does not cap monthly output. Research, planning, measurement, and smaller adaptations continue around the active piece.</p>
             </div>
-            <h3>What the subscription includes</h3>
+            <h3>Included every month</h3>
             <ul>
-              <li>Research, interviews, strategy, writing, and design</li>
-              <li>A biography with a source for every fact</li>
-              <li>Three recurring editorial series</li>
-              <li>A rolling 90-day content plan</li>
-              <li>Preparation for the agreed publishing channels</li>
+              <li>Audience, market, competitor, search, and reputation research</li>
+              <li>Positioning, messaging, and opportunity development</li>
+              <li>Original editorial series and campaign concepts</li>
+              <li>Interviews and source gathering</li>
+              <li>Writing, editing, and fact-checking</li>
+              <li>Design and preparation for the agreed channels</li>
+              <li>Evidence links, attribution, and image-permission guidance</li>
               <li>Reasonable revisions to the active piece</li>
               <li>Smaller adaptations made from the active piece</li>
-              <li>A review after the first 90 days</li>
+              <li>A rolling 90-day plan and prioritized backlog</li>
+              <li>Performance review and recommendations for what to make next</li>
             </ul>
-            <p>Each month is paid before work begins. The subscription continues month to month and may be paused or canceled before the next billing period. Paid media, commissioned photography, travel, and outside production costs are separate. The amount completed will depend on the work chosen and review time. This draft makes no promise about leads, revenue, or return on investment.</p>
+            <div className={styles.scopeNote}>
+              <h3>Quoted separately</h3>
+              <ul>
+                <li>Multiple primary deliverables produced at the same time</li>
+                <li>Daily posting, inbox work, or community management</li>
+                <li>Paid advertising and media spend</li>
+                <li>Professional photography, video crews, travel, or events</li>
+                <li>Printing, licensing, software, data, or other outside costs</li>
+                <li>Website development, public relations outreach, or crisis communications</li>
+                <li>Rush work or revisions beyond the agreed review process</li>
+              </ul>
+            </div>
+            <p>Each month is paid before work begins. The subscription continues month to month and may be paused or canceled before the next billing period. The amount completed will depend on the work chosen, its complexity, and review time. Audience growth, leads, transactions, revenue, and search rankings cannot be guaranteed.</p>
           </div>
         </div>
 
